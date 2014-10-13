@@ -16,11 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".EventList">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jozsef.myweekend" />
         </activity>
+
+        <activity android:name=".EventPage">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jozsef.myweekend" />
+        </activity>
+
     </application>
 
 </manifest>

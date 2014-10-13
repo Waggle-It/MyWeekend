@@ -2,41 +2,18 @@
 
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:maxLines="50"
+    android:scrollbars="vertical">
 
-    <Button android:id="@+id/Event1"
-        android:layout_width="fill_parent"
-        android:layout_height="73dp"
-        android:text="@string/event"
-        android:layout_gravity="left"
-        android:clickable="true" />
 
-    <Button android:id="@+id/Even21"
-        android:layout_width="fill_parent"
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/event"
-        android:layout_gravity="left"/>
-
-    <Button android:id="@+id/Event3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/event"
-        android:layout_gravity="left"/>
-
-    <Button android:id="@+id/Event4"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/event"
-        android:layout_gravity="left"/>
-
-    <Button android:id="@+id/Event5"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/event"
-        android:layout_gravity="left"/>
-
+        android:id="@+id/listView" />
 </LinearLayout>

@@ -25,12 +25,6 @@ public class Login extends Activity {
     public void loginSubmission() {
 
 
-
-
-
-
-
-
         Button submit = (Button) findViewById(R.id.submit);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -48,22 +42,6 @@ public class Login extends Activity {
     }
 
 
-    public void loginSub(View view) {
 
-            setContentView(R.layout.eventselector);
-
-
-            Button event1;
-            event1 = (Button) findViewById(R.id.Event1);
-
-
-            event1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-
-                }
-            });
-        }
     }
 
