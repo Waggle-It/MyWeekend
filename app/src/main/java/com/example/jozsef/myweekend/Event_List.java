@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
+/**I changed somthing
  * Created by Jozsef on 10/14/2014.
  */
 public class Event_List extends Activity {
@@ -32,7 +32,7 @@ public class Event_List extends Activity {
 
 class SingleRow
 {
-    String title;
+    String title = "";
     String date;
     int image;
 
