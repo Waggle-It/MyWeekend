@@ -34,7 +34,7 @@ public class Login extends Activity {
 
 
                 Toast.makeText(Login.this, "You clicked It!", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Login.this, EventList.class));
+                startActivity(new Intent(Login.this, Event_List.class));
 
             }
         });
