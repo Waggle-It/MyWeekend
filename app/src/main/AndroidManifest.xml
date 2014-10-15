@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".EventList">
+        <activity android:name=".Event_List">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
