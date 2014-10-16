@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
+/**I changed somthing
  * Created by Jozsef on 10/14/2014.
  */
 public class Event_List extends Activity implements AdapterView.OnItemClickListener{
@@ -45,7 +45,7 @@ public class Event_List extends Activity implements AdapterView.OnItemClickListe
 //Consolidates single list item data.
 class SingleRow
 {
-    String title;
+    String title = "";
     String date;
     int image;
 
