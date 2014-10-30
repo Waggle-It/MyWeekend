@@ -17,4 +17,6 @@
     <item name="checkBox18" type="id" />
     <item name="checkBox17" type="id" />
     <item name="checkBox14" type="id" />
+    <item name="foodCost" type="id" />
+    <item name="food" type="id" />
 </resources>

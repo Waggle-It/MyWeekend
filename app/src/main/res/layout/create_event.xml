@@ -1,109 +1,375 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Create New Event"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/createEvent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:hint="Event Title"
-        android:layout_toEndOf="@+id/editText5"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/CreateNewEvent"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText5"
-        android:hint="Date (MM/DD/YY)"
-        android:layout_below="@+id/editText3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/EventTitle"
+            android:hint="@string/EventTitle"
+            android:inputType="textCapWords"
+            android:layout_toEndOf="@+id/Date"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="22dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText6"
-        android:hint="Time"
-        android:layout_marginBottom="5pt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText5" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Date"
+            android:inputType="date"
+            android:hint="@string/EventDate"
+            android:layout_below="@+id/EventTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/EventTitle"
+            android:layout_alignEnd="@+id/EventTitle" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText7"
-        android:hint="Location"
-        android:layout_marginBottom="5pt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText6" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Time"
+            android:inputType="datetime"
+            android:hint="@string/EventTime"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Date" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:hint="Description"
-        android:layout_marginBottom="5pt"
-        android:layout_below="@+id/editText7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Location"
+            android:hint="@string/EventLocation"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Time"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Point of Contact"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:maxLines="5"
+            android:id="@+id/Description"
+            android:hint="@string/desc"
+            android:layout_marginBottom="5pt"
+            android:layout_below="@+id/Location"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:text="Name"
-        android:layout_marginBottom="5pt"
-        android:layout_marginTop="5pt"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_alignEnd="@+id/editText4" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/PointContact"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/Description"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:layout_marginBottom="5pt"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Email"
-        android:layout_alignRight="@+id/editText8"
-        android:layout_alignEnd="@+id/editText8" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pcName"
+            android:hint="@string/name"
+            android:inputType="textCapWords"
+            android:layout_marginBottom="5pt"
+            android:layout_marginTop="5pt"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText8"
-        android:layout_below="@+id/editText4"
-        android:layout_marginBottom="5pt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Phone number" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pcmail"
+            android:layout_marginBottom="5pt"
+            android:layout_below="@+id/pcName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/Email"/>
 
-</RelativeLayout>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/PhoneNumber"
+            android:inputType="phone"
+            android:layout_below="@+id/pcmail"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/PhoneNumber"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat6"
+            android:id="@+id/food"
+            android:checked="false"
+            android:layout_below="@+id/PhoneNumber"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/foodCost"
+            android:inputType="numberDecimal"
+            android:layout_below="@+id/food"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/AmountFood"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat19"
+            android:id="@+id/ticket"
+            android:checked="false"
+            android:layout_below="@+id/PhoneNumber"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ticketCosts"
+            android:inputType="numberDecimal"
+            android:layout_below="@+id/ticket"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:hint="@string/AddmissionPrice"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Catagories"
+            android:id="@+id/textView15"
+            android:layout_marginTop="20pt"
+            android:layout_below="@+id/foodCost"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat5"
+            android:id="@+id/FilmMediaEntertainment"
+            android:layout_toEndOf="@+id/CharityCauses"
+            android:checked="false"
+            android:layout_below="@+id/FamilyEducation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat3"
+            android:id="@+id/FamilyEducation"
+            android:layout_toEndOf="@+id/Date"
+            android:checked="false"
+            android:layout_below="@+id/BusinessProfessional"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat2"
+            android:id="@+id/CharityCauses"
+            android:checked="false"
+            android:layout_alignBottom="@id/AutoBoatAir"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat4"
+            android:id="@+id/FashionBeauty"
+            android:checked="false"
+            android:layout_below="@+id/CharityCauses"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat1"
+            android:id="@+id/BusinessProfessional"
+            android:checked="false"
+            android:layout_below="@+id/TravelOutdoor"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat0"
+            android:id="@+id/AutoBoatAir"
+            android:checked="false"
+            android:layout_below="@+id/textView15"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat7"
+            android:id="@+id/FoodDrink"
+            android:checked="false"
+            android:layout_below="@+id/FashionBeauty"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat8"
+            android:id="@+id/GovernmentPolitics"
+            android:checked="false"
+            android:layout_below="@+id/FilmMediaEntertainment"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat9"
+            android:id="@+id/HealthWellness"
+            android:layout_below="@+id/FoodDrink"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat11"
+            android:id="@+id/HomeLifestyle"
+            android:layout_below="@+id/HealthWellness"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat10"
+            android:id="@+id/HobbiesSpecialInterest"
+            android:layout_below="@+id/GovernmentPolitics"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat14"
+            android:id="@+id/PerformingVisualArts"
+            android:checked="false"
+            android:layout_below="@+id/HobbiesSpecialInterest"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat12"
+            android:id="@+id/Music"
+            android:checked="false"
+            android:layout_below="@+id/HomeLifestyle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat16"
+            android:id="@+id/ScienceTechnology"
+            android:layout_below="@+id/Music"
+            android:checked="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat15"
+            android:id="@+id/ReligionSpirituality"
+            android:checked="false"
+            android:layout_below="@+id/PerformingVisualArts"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat17"
+            android:id="@+id/SeasonalHoliday"
+            android:layout_below="@+id/ScienceTechnology"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat20"
+            android:id="@+id/TravelOutdoor"
+            android:layout_below="@+id/SeasonalHoliday"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat18"
+            android:id="@+id/SportsFitness"
+            android:layout_below="@+id/ReligionSpirituality"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat13"
+            android:id="@+id/Other"
+            android:layout_below="@+id/SportsFitness"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oK"
+            android:id="@+id/button"
+            android:layout_below="@+id/Other"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</ScrollView>

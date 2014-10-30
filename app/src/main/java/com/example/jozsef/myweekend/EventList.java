@@ -1,7 +1,7 @@
 package com.example.jozsef.myweekend; /**
  * Created by Angela on 10/22/2014.
  */
-
+//Creates an array of list event.
 public class EventList {
     private Event[] eventArray= new Event[0];
     public EventList(){

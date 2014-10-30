@@ -1,4 +1,8 @@
 package com.example.jozsef.myweekend;
+/**
+ *This class creates an object of type event with the various parameters that an event could possibly
+ * take on.
+ */
 public class Event {
     private String title, location, date, description ;
     private boolean hasFood;

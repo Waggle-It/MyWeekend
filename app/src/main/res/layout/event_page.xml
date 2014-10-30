@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:id="@+id/event_page_frame">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/event_page">
 
 
@@ -41,7 +41,8 @@
             android:src="@drawable/ic_launcher"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:contentDescription="stuff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,36 +55,50 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignBaseline="@+id/textView8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/discription"
-            android:id="@+id/textView10"
-            android:layout_toEndOf="@+id/button"
-            android:layout_below="@+id/textView8"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/button2"
-            android:layout_marginBottom="3pt"
-            android:layout_alignEnd="@+id/button2" />
+            android:text="@string/desc"
+            android:id="@+id/textView10" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact"
-            android:id="@+id/button"
-            android:layout_below="@+id/textView10"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+        </LinearLayout>
+        </ScrollView>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Buy tickets"
-            android:id="@+id/button2"
-            android:layout_alignBottom="@+id/button"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
     </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        android:id="@+id/button"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="left|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy tickets"
+        android:id="@+id/button2"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right|bottom" />
+
+
 </FrameLayout>
