@@ -1,58 +1,67 @@
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fractal22">
+    android:background="@drawable/smiles">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="\n\n"
-        android:textSize="20pt"/>
 
     <EditText android:id="@+id/loginId"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Email"
         android:textSize="20pt"
-        android:gravity="center_vertical"
+        android:layout_above="@+id/password"
+        android:layout_margin="4dp"
         android:autoText="false"
-        android:background="#ffffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="\n"
-        android:textSize="2pt"/>
+        android:layout_centerHorizontal="true"
+        android:background="#ffffffff"/>
 
     <EditText android:id="@+id/password"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:textSize="20pt"
-        android:gravity="center_vertical"
+        android:layout_centerInParent="true"
+        android:layout_margin="4dp"
         android:password="true"
         android:background="#fff2ffd7" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="\n"
-        android:textSize="2pt"/>
 
     <Button
         android:id="@+id/submit"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:layout_centerHorizontal="true"
         android:onClick="loginSub"
+        android:layout_below="@id/password"
         android:background="#fc676f8e"
         android:longClickable="false"
         android:textColor="#ff020202"
         android:textSize="10pt">
         </Button>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/NewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/submit"
+            android:text="New User"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/ContGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/NewUser"
+        android:text="Continue as Guest"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:layout_margin="10dp"/>
+
+
+</RelativeLayout>
