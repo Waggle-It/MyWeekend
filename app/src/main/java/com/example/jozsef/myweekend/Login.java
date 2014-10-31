@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -17,6 +18,8 @@ public class Login extends Activity {
         setContentView(R.layout.login);
 
         loginSubmission();
+        newUser();
+        guestUser();
         fakeData();
     }
 
@@ -28,8 +31,34 @@ public class Login extends Activity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(Login.this, "You clicked It!", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Login.this, Event_List.class));
+                startActivity(new Intent(Login.this, SortMenu.class));
+            }
+        });
+
+    }
+
+    public void newUser() {
+        TextView newUser = (TextView) findViewById(R.id.NewUser);
+
+        newUser.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Login.this, "Welcome!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Login.this, NewUser.class));
+            }
+        });
+
+    }
+
+    public void guestUser() {
+        TextView guestUser = (TextView) findViewById(R.id.ContGuest);
+
+        guestUser.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, SortMenu.class));
             }
         });
 

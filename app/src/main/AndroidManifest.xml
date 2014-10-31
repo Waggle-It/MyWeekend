@@ -17,6 +17,20 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".NewUser">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jozsef.myweekend" />
+        </activity>
+
+        <activity android:name=".SortMenu">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jozsef.myweekend" />
+        </activity>
+
         <activity android:name=".Event_List">
 
             <meta-data

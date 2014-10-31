@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mission"
+        android:textSize="10pt"
+        android:text="@string/optimism"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/Email"
+        android:id="@+id/Email"
+        android:layout_below="@id/mission"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="@string/password"
+        android:id="@+id/password"
+        android:layout_below="@id/Email"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/passwordConfirm"
+        android:id="@+id/passwordConfirm"
+        android:layout_below="@id/password"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/Zip"
+        android:layout_below="@id/passwordConfirm"
+        android:hint="@string/zip"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/startAdventure"
+        android:layout_below="@+id/Zip"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>
