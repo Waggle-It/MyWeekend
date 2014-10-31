@@ -17,6 +17,7 @@ public class Login extends Activity {
         setContentView(R.layout.login);
 
         loginSubmission();
+        fakeData();
     }
 
     //Listens for the user to submit their login information.
@@ -32,6 +33,30 @@ public class Login extends Activity {
             }
         });
 
+    }
+
+    private void fakeData() {
+        EventList og = new EventList();
+
+        String[] titles = {"Stats Tutoring Group", "Ice Cream Social", "Apple Picking", "Trip to San Fransisco", "HackMIT", "Pumpkin Patch", "Octoverlovers Hayride", "Barn dance", "IronChef", "Apple Pressing & Cider Making", "Farmer's Market", "Peach Cobbler", "BoilerMake", "Seattle Trip", "PMT run", "Opening for new Ramen shop", "AWESOME HALLOWEEN PARTY", "Juice Bar opens", "WildHacks", "Angela's Birthday Party" };
+        String[] dates = {"10/15/14 10:00am", "10/16/14 11:00am", "10/17/14 12:00pm","10/18/14 1:00pm","10/18/14 2:00pm","10/17/14 11:00am","10/19/14 2:00pm","10/21/14 6:00pm","10/18/14 3:00pm","10/29/14 7:00pm","10/23/14 3:00pm","10/25/14 6:00pm","10/22/14 7:00pm","10/25/14 4:00pm","10/28/14 2:00pm","10/30/14 8:00pm","10/31/14 11:00pm","10/29/14 11:00pm","10/27/14 5:00pm","11/16/14 8:00am"};
+        String[] location = {"909 Wabash Ave. Mattoon, IL 61938", "6 Hartwell Ct. Savoy, IL 61874", "1306 Cedar Dr. Killeen, TX 76544", "105 N 16 St. Mattoon, IL 61938", "6 Brian Dr. Mattoon, IL 61938", "2414 Lago Trail Killeen, TX 76544", "3108 Atkinson Ave. Killeen, Tx", "4/3 ACR Fort Hood, Tx", "4/3 ACR BIOP Baghdad Iraq", "3rd ACR rear Det. Fort hood, Tx", "B CO, 173rd Btn, 35th Signal reg. Fort Gordon, Georgia", "F CO, 1st Btn, 13th Infantry Regiment", "1600 Amphitheatre Parkway Mountain View, CA 94043", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA"};
+        String description= "Description…\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\n\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\n...";
+
+        //int [] images ={R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher};
+        int images = R.drawable.ic_launcher;
+
+
+
+        for(int i=0; i<20; i++){//builds each list element.
+            boolean hasFood= ((int)(Math.random()*2)==0);
+            double price = Math.random()*999;
+            //list.add(new SingleRow(titles[i], dates[i], images));
+            Event temp = new Event( titles[i], location[i], dates[i], description, hasFood, price, images);
+            og.addEvent(temp);
+
+            eventAdapter.og=og;
+        }
     }
 }
 
