@@ -66,12 +66,12 @@ class eventAdapter extends BaseAdapter
 
     @Override
     public int getCount() {
-        return og.getLength();
+        return og.getEventList().size();
     }
 
     @Override
     public Object getItem(int i) {
-        return og.getEventList(i);
+        return og.getEventList().get(i);
     }
 
     @Override
@@ -92,9 +92,9 @@ class eventAdapter extends BaseAdapter
         ImageView image = (ImageView) row.findViewById(R.id.imageView2);
 
         //Changes the values
-        title.setText(og.getEventList(i).getTitle());
-        dates.setText(og.getEventList(i).getDate());
-        image.setImageResource(og.getEventList(i).getImage());
+        title.setText(og.getEventList().get(i).getTitle());
+        dates.setText(og.getEventList().get(i).getDate());
+        image.setImageResource(og.getEventList().get(i).getImage());
 
         EventPage.ccg=og;
         return row;

@@ -41,11 +41,11 @@ public class EventPage extends Activity {
         ImageView image = (ImageView) view.findViewById(R.id.imageView);
         TextView description = (TextView) view.findViewById(R.id.textView10);
 
-        title.setText(ccg.getEventList(EventPage.eventLocation).getTitle());
-        dates.setText(ccg.getEventList(EventPage.eventLocation).getDate());
-        location.setText(ccg.getEventList(EventPage.eventLocation).getLocation());
-        image.setImageResource(ccg.getEventList(EventPage.eventLocation).image);
-        description.setText(ccg.getEventList(EventPage.eventLocation).getDescription());
+        title.setText(ccg.getEventList().get(EventPage.eventLocation).getTitle());
+        dates.setText(ccg.getEventList().get(EventPage.eventLocation).getDate());
+        location.setText(ccg.getEventList().get(EventPage.eventLocation).getLocation());
+        image.setImageResource(ccg.getEventList().get(EventPage.eventLocation).image);
+        description.setText(ccg.getEventList().get(EventPage.eventLocation).getDescription());
 
         return view;
     }

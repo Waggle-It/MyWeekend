@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import java.net.URL;
 
 /**
  * Created by Jozsef on 10/24/2014.
@@ -47,7 +46,6 @@ public class Create_Event extends Activity {
         String title, location, description, date, pcName, pcEmail, webLink;
         double foodCosts, ticketCosts;
         int image;
-
         categories = onOff();
 
         title = getEventTitle();
@@ -63,8 +61,8 @@ public class Create_Event extends Activity {
         image = getImage();
 
         Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image);
+        ccg.getEventList().add(nEw);
 
-        ccg.addEvent(nEw);
     }
 
     //Returns Admission costs

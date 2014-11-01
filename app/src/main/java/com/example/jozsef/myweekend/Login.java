@@ -32,10 +32,10 @@ public class Login extends Activity {
 
             @Override
             public void onClick(View v) {
-            EditText password = (EditText)findViewById(R.id.password);
-            EditText loginId = (EditText)findViewById(R.id.loginId);
-            if(UserList.getPassword(0).equals(password.getText().toString()) && UserList.getUserEmail(0).equals(loginId.getText().toString()))
-                startActivity(new Intent(Login.this, SortMenu.class));
+                EditText password = (EditText)findViewById(R.id.password);
+                EditText loginId = (EditText)findViewById(R.id.loginId);
+                if(UserList.getPassword(0).equals(password.getText().toString()) && UserList.getUserEmail(0).equals(loginId.getText().toString()))
+                    startActivity(new Intent(Login.this, SortMenu.class));
             }
         });
 
@@ -92,11 +92,10 @@ public class Login extends Activity {
             double ticketCosts = Math.random()*999;
             //list.add(new SingleRow(titles[i], dates[i], images));
             Event temp = new Event( titles[i], location[i], dates[i], description, characteristics, foodCosts, ticketCosts, images);
-            og.addEvent(temp);
+            og.getEventList().add(temp);
 
             eventAdapter.og=og;
             Create_Event.ccg=og;
         }
     }
 }
-
