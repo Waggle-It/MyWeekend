@@ -28,6 +28,7 @@
         android:layout_centerInParent="true"
         android:hint="@string/password"
         android:id="@+id/password"
+        android:inputType="textPassword"
         android:layout_below="@id/Email"/>
 
     <EditText
@@ -43,10 +44,12 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:id="@+id/Zip"
+        android:inputType="number"
         android:layout_below="@id/passwordConfirm"
         android:hint="@string/zip"/>
 
     <Button
+        android:id="@+id/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/startAdventure"

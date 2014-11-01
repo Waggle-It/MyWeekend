@@ -5,16 +5,17 @@ package com.example.jozsef.myweekend;
  */
 public class Event {
     private String title, location, date, description ;
-    private boolean hasFood;
+    private boolean[] characteristics;
     int image;
-    private double price;
-    public Event(String title, String location, String date, String description, boolean hasFood, double price, int image){
+    private double foodCosts, ticketCosts;
+    public Event(String title, String location, String date, String description, boolean[] characteristics, double foodCosts, double ticketCosts, int image){
         this.title = title;
         this.location = location;
         this.date = date;
         this.description = description;
-        this.hasFood = hasFood;
-        this.price = price;
+        this.characteristics = characteristics;
+        this.foodCosts = foodCosts;
+        this.ticketCosts = ticketCosts;
         this.image = image;
     }
     public Event(){
@@ -31,11 +32,14 @@ public class Event {
     public String getDescription(){
         return description;
     }
-    public boolean hasFood(){
-        return hasFood;
+    public boolean getcharacteristics(int i){
+        return characteristics[i];
     }
-    public double getPrice(){
-        return price;
+    public double getFoodCosts(){
+        return foodCosts;
+    }
+    public double getTicketCosts(){
+        return ticketCosts;
     }
     public int getImage(){return this.image; }
     public void setTitle(String title){
@@ -50,11 +54,13 @@ public class Event {
     public void setDescription(String description){
         this.description = description;
     }
-    public void setHasFood(boolean hasFood){
-        this.hasFood = hasFood;
+    public void setHasFood(boolean onOff, int i){
+        this.characteristics[i] = onOff;
     }
-    public void setPrice(double price){
-        this.price = price;
+    public void setTicketCosts(double price){
+        this.ticketCosts = price;
     }
-
+    public void setFoodCosts(double price){
+        this.foodCosts = price;
+    }
 }

@@ -27,6 +27,14 @@ public class EventPage extends Activity {
         LayoutInflater x = getLayoutInflater();
         view = x.inflate(R.layout.event_page, null);
 
+        modifyView();
+
+        setContentView(view);
+
+    }
+
+    public View modifyView() {
+
         TextView title = (TextView) view.findViewById(R.id.textView);
         TextView dates = (TextView) view.findViewById(R.id.textView6);
         TextView location = (TextView) view.findViewById(R.id.textView8);
@@ -38,9 +46,9 @@ public class EventPage extends Activity {
         location.setText(ccg.getEventList(EventPage.eventLocation).getLocation());
         image.setImageResource(ccg.getEventList(EventPage.eventLocation).image);
         description.setText(ccg.getEventList(EventPage.eventLocation).getDescription());
-        setContentView(view);
-    }
 
+        return view;
+    }
 }
 
 

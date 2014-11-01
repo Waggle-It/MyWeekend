@@ -8,13 +8,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.net.URL;
+
 /**
  * Created by Jozsef on 10/24/2014.
  *
  * This takes input from the create event xml from the user and adds a new event to our system.
  */
 public class Create_Event extends Activity {
-
+    public static EventList ccg;
     View view;
 
     @Override   //Retrieves the xml layout view from create_event
@@ -44,6 +46,7 @@ public class Create_Event extends Activity {
         boolean[] categories = new boolean[21];
         String title, location, description, date, pcName, pcEmail, webLink;
         double foodCosts, ticketCosts;
+        int image;
 
         categories = onOff();
 
@@ -57,8 +60,11 @@ public class Create_Event extends Activity {
         foodCosts = getEventFoodCosts();
         ticketCosts = getEventTicketCosts();
 
+        image = getImage();
 
+        Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image);
 
+        ccg.addEvent(nEw);
     }
 
     //Returns Admission costs
@@ -109,6 +115,8 @@ public class Create_Event extends Activity {
         EditText title = (EditText)findViewById(R.id.EventTitle);
         return title.getText().toString();
     }
+
+    private int getImage (){return R.drawable.ic_launcher;}
 
     //Returns an array of booleans that help characterize the event.
     private boolean[] onOff(){

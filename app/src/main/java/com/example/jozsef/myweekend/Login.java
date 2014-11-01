@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,9 @@ public class Login extends Activity {
 
             @Override
             public void onClick(View v) {
+            EditText password = (EditText)findViewById(R.id.password);
+            EditText loginId = (EditText)findViewById(R.id.loginId);
+            if(UserList.getPassword(0).equals(password.getText().toString()) && UserList.getUserEmail(0).equals(loginId.getText().toString()))
                 startActivity(new Intent(Login.this, SortMenu.class));
             }
         });
@@ -72,19 +76,26 @@ public class Login extends Activity {
         String[] location = {"909 Wabash Ave. Mattoon, IL 61938", "6 Hartwell Ct. Savoy, IL 61874", "1306 Cedar Dr. Killeen, TX 76544", "105 N 16 St. Mattoon, IL 61938", "6 Brian Dr. Mattoon, IL 61938", "2414 Lago Trail Killeen, TX 76544", "3108 Atkinson Ave. Killeen, Tx", "4/3 ACR Fort Hood, Tx", "4/3 ACR BIOP Baghdad Iraq", "3rd ACR rear Det. Fort hood, Tx", "B CO, 173rd Btn, 35th Signal reg. Fort Gordon, Georgia", "F CO, 1st Btn, 13th Infantry Regiment", "1600 Amphitheatre Parkway Mountain View, CA 94043", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA", "TBA"};
         String description= "Description…\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\n\nz\ny\nx\nw\nv\nu\nt\ns\nr\nq\np\no\nn\nm\nl\nk\nj\ni\nh\ng\nf\ne\nd\nc\nb\na\n...";
 
+        boolean[] characteristics = new boolean[21];
+
         //int [] images ={R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher};
         int images = R.drawable.ic_launcher;
+
+        for(int i=0; i<21; i++){
+            characteristics[i]=Math.random()*2==0;
+        }
 
 
 
         for(int i=0; i<20; i++){//builds each list element.
-            boolean hasFood= ((int)(Math.random()*2)==0);
-            double price = Math.random()*999;
+            double foodCosts = Math.random()*999;
+            double ticketCosts = Math.random()*999;
             //list.add(new SingleRow(titles[i], dates[i], images));
-            Event temp = new Event( titles[i], location[i], dates[i], description, hasFood, price, images);
+            Event temp = new Event( titles[i], location[i], dates[i], description, characteristics, foodCosts, ticketCosts, images);
             og.addEvent(temp);
 
             eventAdapter.og=og;
+            Create_Event.ccg=og;
         }
     }
 }
