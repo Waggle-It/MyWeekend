@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Jozsef on 10/31/2014.
@@ -30,9 +32,22 @@ public class NewUser extends Activity{
         EditText password = (EditText)findViewById(R.id.password);
         return password.getText().toString();
     }
+    private String getConfirmPassword(){
+        EditText confirmPassword = (EditText)findViewById(R.id.passwordConfirm);
+        return confirmPassword.getText().toString();
+    }
     private int getZipCode(){
         EditText zip = (EditText)findViewById(R.id.Zip);
-        return zip.getInputType();
+
+        try {
+            int x = Integer.parseInt(zip.getText().toString());
+            return x;
+        }
+       catch(Exception e){}
+
+        Toast.makeText(NewUser.this, "Please enter a zip code", Toast.LENGTH_LONG).show();
+
+        return 0;
     }
 
     private void create(){
@@ -45,15 +60,63 @@ public class NewUser extends Activity{
             public void onClick(View v) {
                 int[] preferancesLike = new int[21];
 
-                for(int i=0; i<21; i++) {
-                    preferancesLike[i] = 0;
+                if(verifyEmail(getEmail()) && verifyPassword(getPassword(), getConfirmPassword()) && verifyZip(getZipCode())) {
+                    for (int i = 0; i < 21; i++) {
+                        preferancesLike[i] = 0;
+                    }
+
+                    User newUser = new User(getEmail(), getPassword(), getZipCode(), preferancesLike);
+                    UserList.addUser(newUser);
+
+                    startActivity(new Intent(NewUser.this, Login.class));
                 }
 
-                User newUser = new User(getEmail(), getPassword(), getZipCode(), preferancesLike);
-                UserList.addUser(newUser);
 
-                startActivity(new Intent(NewUser.this, Login.class));
             }
         });
+    }
+
+    private boolean verifyPassword(String password, String confirmPassword){
+        if (password.length()>7) {
+            if(password.equals(confirmPassword))
+                return true;
+            else
+                Toast.makeText(NewUser.this, "Password does not match confirmation password", Toast.LENGTH_LONG).show();
+        }
+        else
+            Toast.makeText(NewUser.this, "Password must be at least 8 characters", Toast.LENGTH_LONG).show();
+
+        return false;
+    }
+
+    private boolean verifyEmail(String email){
+        return true;
+    }
+
+
+    private boolean verifyZip(int Zip){
+        if(Integer.toString(Zip).length()==5) {
+            return true;
+
+        }
+        else
+            Toast.makeText(NewUser.this, "Invalid Zip Code", Toast.LENGTH_LONG).show();
+
+
+        return false;
+    }
+
+    private boolean uniqueUser(){
+        TextView loginId = (TextView)findViewById(R.id.loginId);
+        boolean unique = true;
+
+        for(int i=0; i<UserList.getUserListLength(); i++) {
+            if (UserList.getUserEmail(i).equals(loginId.getText().toString()))
+                unique = false;
+        }
+        if(!unique)
+        Toast.makeText(NewUser.this, "Account already exists" , Toast.LENGTH_LONG).show();
+
+        return unique;
     }
 }
