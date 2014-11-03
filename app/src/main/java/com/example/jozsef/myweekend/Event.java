@@ -6,8 +6,10 @@ package com.example.jozsef.myweekend;
 public class Event {
     private String title, location, date, description ;
     private boolean[] characteristics;
-    int image;
+    int image, idNumber;
     private double foodCosts, ticketCosts;
+    public static int id;
+
     public Event(String title, String location, String date, String description, boolean[] characteristics, double foodCosts, double ticketCosts, int image){
         this.title = title;
         this.location = location;
@@ -17,6 +19,9 @@ public class Event {
         this.foodCosts = foodCosts;
         this.ticketCosts = ticketCosts;
         this.image = image;
+
+        ++id;
+        this.idNumber = id;
     }
     public Event(){
     }
