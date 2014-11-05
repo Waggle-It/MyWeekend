@@ -23,4 +23,6 @@ public class UserList {
     public static String getUserEmail(int i){
         return userList[i].getEmail();
     }
+
+    public static int getUserListLength(){return userList.length;}
 }

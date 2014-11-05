@@ -60,7 +60,7 @@ public class NewUser extends Activity{
             public void onClick(View v) {
                 int[] preferancesLike = new int[21];
 
-                if(verifyEmail(getEmail()) && verifyPassword(getPassword(), getConfirmPassword()) && verifyZip(getZipCode())) {
+                if(verifyEmail(getEmail()) && verifyPassword(getPassword(), getConfirmPassword()) && verifyZip(getZipCode()) && uniqueUser()) {
                     for (int i = 0; i < 21; i++) {
                         preferancesLike[i] = 0;
                     }
@@ -107,11 +107,11 @@ public class NewUser extends Activity{
     }
 
     private boolean uniqueUser(){
-        TextView loginId = (TextView)findViewById(R.id.loginId);
+        ;
         boolean unique = true;
 
         for(int i=0; i<UserList.getUserListLength(); i++) {
-            if (UserList.getUserEmail(i).equals(loginId.getText().toString()))
+            if (UserList.getUserEmail(i).equals(getEmail()))
                 unique = false;
         }
         if(!unique)
