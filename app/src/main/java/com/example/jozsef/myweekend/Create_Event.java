@@ -15,7 +15,6 @@ import android.widget.EditText;
  * This takes input from the create event xml from the user and adds a new event to our system.
  */
 public class Create_Event extends Activity {
-    public static EventList ccg;
     View view;
 
     @Override   //Retrieves the xml layout view from create_event
@@ -61,7 +60,7 @@ public class Create_Event extends Activity {
         image = getImage();
 
         Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image);
-        ccg.getEventList().add(nEw);
+        EventList.getEventList().add(nEw);
 
     }
 
@@ -142,7 +141,6 @@ public class Create_Event extends Activity {
         CheckBox ticket = (CheckBox)findViewById(R.id.ticket);
         CheckBox travelOutdoor = (CheckBox)findViewById(R.id.TravelOutdoor);
 
-        categories[0] = autoBoatAir.isChecked();
         categories[1] = businessProfessional.isChecked();
         categories[2] = charityCauses.isChecked();
         categories[3] = familyEducation.isChecked();
