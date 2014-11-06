@@ -32,10 +32,7 @@ public class Login extends Activity {
 
             @Override
             public void onClick(View v) {
-                EditText password = (EditText)findViewById(R.id.password);
-                EditText loginId = (EditText)findViewById(R.id.loginId);
-                if(UserList.getPassword(0).equals(password.getText().toString()) && UserList.getUserEmail(0).equals(loginId.getText().toString()))
-                    startActivity(new Intent(Login.this, SortMenu.class));
+                verifyUserAndPassword();
             }
         });
 
@@ -65,6 +62,28 @@ public class Login extends Activity {
                 startActivity(new Intent(Login.this, SortMenu.class));
             }
         });
+
+    }
+
+    private void verifyUserAndPassword(){
+        EditText password = (EditText)findViewById(R.id.password);
+        EditText loginId = (EditText)findViewById(R.id.loginId);
+        boolean userCorrect, loggedin;
+
+        userCorrect = loggedin = false;
+        for(int i=0; i<UserList.getUserListLength(); i++) {
+            if(UserList.getUserEmail(i).equals(loginId.getText().toString())) {
+                userCorrect = true;
+                if (UserList.getPassword(i).equals(password.getText().toString())) {
+                    startActivity(new Intent(Login.this, SortMenu.class));
+                    loggedin=true;
+                }
+            }
+        }
+        if(!userCorrect)
+                Toast.makeText(Login.this, "Invalid email address", Toast.LENGTH_LONG).show();
+            else if(!loggedin)
+                Toast.makeText(Login.this, "Password does not match email address", Toast.LENGTH_LONG).show();
 
     }
 
