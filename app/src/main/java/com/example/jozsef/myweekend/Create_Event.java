@@ -42,7 +42,7 @@ public class Create_Event extends Activity {
     }
     //Method is activated when the user hits the submit button all fields necessary to create a new event are retrieved.
     private void create(){
-        boolean[] categories = new boolean[21];
+        boolean[] categories;
         String title, location, description, date, pcName, pcEmail, webLink;
         double foodCosts, ticketCosts;
         int image;
