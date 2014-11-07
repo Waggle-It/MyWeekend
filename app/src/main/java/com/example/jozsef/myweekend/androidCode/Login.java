@@ -81,6 +81,7 @@ public class Login extends Activity {
             if(UserList.getUserEmail(i).equals(loginId.getText().toString())) {
                 userCorrect = true;
                 if (UserList.getPassword(i).equals(password.getText().toString())) {
+                    UserList.setCurrentUser(i);
                     startActivity(new Intent(Login.this, SortMenu.class));
                     loggedin=true;
                 }

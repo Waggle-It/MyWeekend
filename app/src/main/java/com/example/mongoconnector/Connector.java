@@ -60,13 +60,13 @@ public class Connector {
         }
     }
 
-    public Event pullEvent(int i){
+    //public Event pullEvent(int i){
 
-    }
+    //}
 
-    public Event pushEvent(Event e){
+    //public Event pushEvent(Event e){
 
-    }
+    //}
 
 
 }
