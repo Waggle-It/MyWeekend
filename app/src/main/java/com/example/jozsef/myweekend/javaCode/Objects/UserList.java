@@ -4,6 +4,7 @@ package com.example.jozsef.myweekend.javaCode.Objects;
  * Created by Jozsef on 10/31/2014.
  */
 public class UserList {
+    private static User currentUser;
     private static User[] userList = new User[0];
 
     public static void addUser(User nEw){
@@ -25,4 +26,12 @@ public class UserList {
     }
 
     public static int getUserListLength(){return userList.length;}
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
+
+    public final void setCurrentUser(int i) {
+        UserList.currentUser = userList[i];
+    }
 }
