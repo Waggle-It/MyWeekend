@@ -1,16 +1,8 @@
 package com.example.jozsef.myweekend.javaCode;
 
-import android.content.Context;
-import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.example.jozsef.myweekend.R;
-import com.example.jozsef.myweekend.User;
-import com.example.jozsef.myweekend.UserList;
-import com.example.jozsef.myweekend.android.Login;
-import com.example.jozsef.myweekend.android.NewUser;
+import com.example.jozsef.myweekend.javaCode.Objects.User;
+import com.example.jozsef.myweekend.javaCode.Objects.UserList;
+import com.example.jozsef.myweekend.androidCode.NewUser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Jozsef on 11/5/2014.
  */
-public class CreateNewUser extends NewUser{
+public class CreateNewUser extends NewUser {
 
     public boolean create(String email, String password, String confirmPassword,int zip){
 

@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.example.jozsef.myweekend.javaCode.Objects.Event;
+import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+
 
 /**
  * Created by Jozsef on 10/24/2014.
@@ -164,4 +167,6 @@ public class Create_Event extends Activity {
 
         return categories;
     }
+
+
 }

@@ -1,4 +1,6 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.javaCode.Objects;
+
+import com.example.jozsef.myweekend.javaCode.Objects.Event;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
  */
 //Creates an array of list event.
 public class EventList {
-    private  List<Event> eventArray= new ArrayList<Event>();
+    private static List<Event> eventArray= new ArrayList<Event>();
     public EventList(List<Event> eventList)
     {
         eventArray = eventList;
@@ -16,7 +18,7 @@ public class EventList {
     public EventList() {
 
     }
-    public List<Event> getEventList(){
+    public static List<Event> getEventList(){
         return eventArray;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.javaCode.Objects;
 /**
  *This class creates an object of type event with the various parameters that an event could possibly
  * take on.

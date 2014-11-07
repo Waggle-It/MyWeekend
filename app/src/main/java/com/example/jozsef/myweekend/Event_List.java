@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.jozsef.myweekend.androidCode.EventPage;
+import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+
 /**I changed somthing
  * Created by Jozsef on 10/14/2014.
  */

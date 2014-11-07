@@ -1,4 +1,4 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.androidCode;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+import com.example.jozsef.myweekend.R;
 
 /**
  * Created by Jozsef on 10/15/2014.
@@ -44,7 +47,7 @@ public class EventPage extends Activity {
         title.setText(ccg.getEventList().get(EventPage.eventLocation).getTitle());
         dates.setText(ccg.getEventList().get(EventPage.eventLocation).getDate());
         location.setText(ccg.getEventList().get(EventPage.eventLocation).getLocation());
-        image.setImageResource(ccg.getEventList().get(EventPage.eventLocation).image);
+        image.setImageResource(ccg.getEventList().get(EventPage.eventLocation).getImage());
         description.setText(ccg.getEventList().get(EventPage.eventLocation).getDescription());
 
         return view;

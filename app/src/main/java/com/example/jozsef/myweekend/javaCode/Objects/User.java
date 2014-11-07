@@ -1,4 +1,4 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.javaCode.Objects;
 
 /**
  * Created by Jozsef on 10/31/2014.
