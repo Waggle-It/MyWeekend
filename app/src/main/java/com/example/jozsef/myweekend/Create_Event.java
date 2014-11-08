@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+import com.example.jozsef.myweekend.javaCode.Objects.Quality;
+import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
 
 /**
@@ -44,10 +47,11 @@ public class Create_Event extends Activity {
     }
     //Method is activated when the user hits the submit button all fields necessary to create a new event are retrieved.
     private void create(){
-        boolean[] categories;
-        String title, location, description, date, pcName, pcEmail, webLink;
+        Quality categories;
+        String title, location, description, date, pcName, pcEmail, webLink, submittedBy;
         double foodCosts, ticketCosts;
         int image;
+
         categories = onOff();
 
         title = getEventTitle();
@@ -56,15 +60,27 @@ public class Create_Event extends Activity {
         date = getEventDate();
         pcName = getEventPCName();
         pcEmail = getPCEmail();
+        submittedBy = getSubmittedBy();
+        webLink = getURL();
 
         foodCosts = getEventFoodCosts();
         ticketCosts = getEventTicketCosts();
 
         image = getImage();
 
-        Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image);
+        Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image, submittedBy, pcName, pcEmail, webLink);
         EventList.getEventList().add(nEw);
 
+    }
+    public String getURL(){
+        TextView url = (TextView)findViewById(R.id.eventURL);
+        return url.getText().toString();
+    }
+    public String getSubmittedBy(){
+        String user = UserList.getCurrentUser().getEmail();
+        int i = user.indexOf("@");
+        user = user.substring(0, i);
+        return user;
     }
 
     //Returns Admission costs
@@ -119,8 +135,7 @@ public class Create_Event extends Activity {
     private int getImage (){return R.drawable.ic_launcher;}
 
     //Returns an array of booleans that help characterize the event.
-    private boolean[] onOff(){
-        boolean[] categories = new boolean[21];
+    private Quality onOff(){
 
         CheckBox autoBoatAir = (CheckBox)findViewById(R.id.AutoBoatAir);
         CheckBox businessProfessional = (CheckBox)findViewById(R.id.BusinessProfessional);
@@ -144,28 +159,29 @@ public class Create_Event extends Activity {
         CheckBox ticket = (CheckBox)findViewById(R.id.ticket);
         CheckBox travelOutdoor = (CheckBox)findViewById(R.id.TravelOutdoor);
 
-        categories[1] = businessProfessional.isChecked();
-        categories[2] = charityCauses.isChecked();
-        categories[3] = familyEducation.isChecked();
-        categories[4] = fashionBeauty.isChecked();
-        categories[5] = filmMediaEntertainment.isChecked();
-        categories[6] = food.isChecked();
-        categories[7] = foodDrink.isChecked();
-        categories[8] = governmentPolitics.isChecked();
-        categories[9] = healthWellness.isChecked();
-        categories[10] = hobbiesSpecialInterest.isChecked();
-        categories[11] = homeLifestyle.isChecked();
-        categories[12] = music.isChecked();
-        categories[13] = other.isChecked();
-        categories[14] = performingVisualArts.isChecked();
-        categories[15] = religionSpirituality.isChecked();
-        categories[16] = scienceTechnology.isChecked();
-        categories[17] = seasonalHoliday.isChecked();
-        categories[18] = sportsFitness.isChecked();
-        categories[19] = ticket.isChecked();
-        categories[20] = travelOutdoor.isChecked();
+        Quality temp = new Quality();
 
-        return categories;
+        temp.setVehicle(autoBoatAir.isChecked());
+        temp.setBusiness(businessProfessional.isChecked());
+        temp.setCause(charityCauses.isChecked());
+        temp.setEducation(familyEducation.isChecked());
+        temp.setFashion(fashionBeauty.isChecked());
+        temp.setEntertainment(filmMediaEntertainment.isChecked());
+        temp.setFood(foodDrink.isChecked());
+        temp.setPolitics(governmentPolitics.isChecked());
+        temp.setHealth(healthWellness.isChecked());
+        temp.setHobbies(hobbiesSpecialInterest.isChecked());
+        temp.setLifestyle(homeLifestyle.isChecked());
+        temp.setMusic(music.isChecked());
+        temp.setOther(other.isChecked());
+        temp.setVisual_arts(performingVisualArts.isChecked());
+        temp.setReligious(religionSpirituality.isChecked());
+        temp.setTechnology(scienceTechnology.isChecked());
+        temp.setHoliday(seasonalHoliday.isChecked());
+        temp.setSports(sportsFitness.isChecked());
+        temp.setOutdoor(travelOutdoor.isChecked());
+
+        return temp;
     }
 
 

@@ -106,9 +106,20 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/eventURL"
+            android:inputType="textUri"
+            android:layout_below="@id/pcmail"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/eventURL"
+            android:layout_marginBottom="5pt"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/PhoneNumber"
             android:inputType="phone"
-            android:layout_below="@+id/pcmail"
+            android:layout_below="@+id/eventURL"
             android:layout_marginBottom="5pt"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"

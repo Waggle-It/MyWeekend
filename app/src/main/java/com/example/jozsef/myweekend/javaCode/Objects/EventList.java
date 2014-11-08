@@ -15,9 +15,7 @@ public class EventList {
     {
         eventArray = eventList;
     }
-    public EventList() {
-
-    }
+    public EventList() {}
     public static List<Event> getEventList(){
         return eventArray;
     }
