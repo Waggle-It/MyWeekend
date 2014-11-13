@@ -31,7 +31,7 @@ public class UserList {
         return currentUser;
     }
 
-    public final void setCurrentUser(int i) {
+    public static final void setCurrentUser(int i) {
         UserList.currentUser = userList[i];
     }
 }
