@@ -1,4 +1,4 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.androidCode;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.jozsef.myweekend.javaCode.Objects.Event;
+import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+import com.example.jozsef.myweekend.R;
+import com.example.jozsef.myweekend.SortMenu;
+import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
 
 public class Login extends Activity {
@@ -71,10 +77,11 @@ public class Login extends Activity {
         boolean userCorrect, loggedin;
 
         userCorrect = loggedin = false;
-        for(int i=0; i<UserList.getUserListLength(); i++) {
+        for(int i=0; i< UserList.getUserListLength(); i++) {
             if(UserList.getUserEmail(i).equals(loginId.getText().toString())) {
                 userCorrect = true;
                 if (UserList.getPassword(i).equals(password.getText().toString())) {
+                    UserList.setCurrentUser(i);
                     startActivity(new Intent(Login.this, SortMenu.class));
                     loggedin=true;
                 }
@@ -113,8 +120,6 @@ public class Login extends Activity {
             Event temp = new Event( titles[i], location[i], dates[i], description, characteristics, foodCosts, ticketCosts, images);
             og.getEventList().add(temp);
 
-            eventAdapter.og=og;
-            Create_Event.ccg=og;
         }
     }
 }

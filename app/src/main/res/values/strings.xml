@@ -40,7 +40,7 @@
     <string name="cat3">Family &amp; Education</string>
     <string name="cat4">Fashion &amp; Beauty</string>
     <string name="cat5">Film, Media &amp; Entertainment</string>
-    <string name="cat6">Food?</string>
+    <string name="cat6">Food Served?</string>
     <string name="cat7">Food Drink</string>
     <string name="cat8">Government &amp; Politics</string>
     <string name="cat9">Health &amp; Wellness</string>
@@ -63,6 +63,7 @@
     <string name="direct5">Recommended</string>
     <string name="direct6">Popular</string>
     <string name="direct7">All Events</string>
+    <string name="eventURL">Event URL</string>
 
     <string-array name="booleans">
         <item>@string/cat0</item>
