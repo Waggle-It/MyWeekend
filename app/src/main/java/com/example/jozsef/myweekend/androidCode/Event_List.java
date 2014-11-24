@@ -1,4 +1,4 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.androidCode;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,8 +14,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.jozsef.myweekend.androidCode.EventPage;
+import com.example.jozsef.myweekend.R;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+
+import java.text.SimpleDateFormat;
 
 /**I changed somthing
  * Created by Jozsef on 10/14/2014.
@@ -56,7 +58,7 @@ public class Event_List extends Activity implements AdapterView.OnItemClickListe
 
 //Customizes list view layout......My understanding breaks down.
 class eventAdapter extends BaseAdapter
-{   public static EventList og;
+{
     //ArrayList<SingleRow> list;
     Context context;
 
@@ -69,12 +71,12 @@ class eventAdapter extends BaseAdapter
 
     @Override
     public int getCount() {
-        return og.getEventList().size();
+        return EventList.getEventList().size();
     }
 
     @Override
     public Object getItem(int i) {
-        return og.getEventList().get(i);
+        return EventList.getEventList().get(i);
     }
 
     @Override
@@ -84,6 +86,8 @@ class eventAdapter extends BaseAdapter
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        SimpleDateFormat monthDay = new SimpleDateFormat("MMMMMMMMMMMM dd");
+
 
         //inflater allows for easy access to modify existing values of xml files. Alowing us to match the layout of single_row.
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -95,11 +99,10 @@ class eventAdapter extends BaseAdapter
         ImageView image = (ImageView) row.findViewById(R.id.imageView2);
 
         //Changes the values
-        title.setText(og.getEventList().get(i).getTitle());
-        dates.setText(og.getEventList().get(i).getDate());
-        image.setImageResource(og.getEventList().get(i).getImage());
+        title.setText(EventList.getEventList().get(i).getTitle());
+        dates.setText(monthDay.format(EventList.getEventList().get(i).getDate()));
+        image.setImageResource(EventList.getEventList().get(i).getImage());
 
-        EventPage.ccg=og;
         return row;
 
     }

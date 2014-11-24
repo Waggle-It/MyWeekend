@@ -1,18 +1,18 @@
-import static java.lang.*;
+package com.example.jozsef.myweekend;
+
+import com.example.jozsef.myweekend.javaCode.Objects.Event;
+
 import java.util.Random;
 import java.lang.Math;
-import java.lang;
-import static java.lang.System.*;
-import java.lang.*;
 
 public class mergeSort {
-    public static long[] mergeSort1(long[] list) {
+    public static Event[] mergeSort1(Event[] list) {
         if (list.length <= 1)
             return list;
 
         // splits the array in half.
-        long[] left = new long[list.length / 2];
-        long[] right = new long[list.length - left.length];
+        Event[] left = new Event[list.length / 2];
+        Event[] right = new Event[list.length - left.length];
 
         for (int i = 0; i < left.length; i++) {
             left[i] = list[i];
@@ -25,8 +25,8 @@ public class mergeSort {
         return merge(mergeSort1(left), mergeSort1(right));
     }
 
-    public static long[] merge(long[] left, long[] right) {
-        long[] result = new long[left.length + right.length];
+    public static Event[] merge(Event[] left, Event[] right) {
+        Event[] result = new Event[left.length + right.length];
 
         int index = 0;
         int index2 = 0;
@@ -48,8 +48,8 @@ public class mergeSort {
                 }
             }
 
-            if(cond){
-                if (left[index] <= right[index2]) {
+            if(cond){//left.getEventList().get(index).getDate()
+                if (left[index].getDate() <= right[index2].getDate()) {
                     result[i] = left[index];
                     index++;
                 }
@@ -65,20 +65,5 @@ public class mergeSort {
         return result;
     }
     // has array list & calls mergesort function
-    public static void main(String[] args)  {
-        // creates the array list that holds 20 random timestamps btwn halloween 2014 and new years2015 (the best time of year)*
-        long[] dates = new long[20];
-        for (int i = 0; i < dates.length; i++){
-            dates[i] = 1414713600 + Math.abs(new Random().nextLong())%(1420113599 - 1414713600 );
-            System.out.println(dates[i]);
-        }
-        // calles the mergsort function
-        dates = mergeSort1(dates);
-        System.out.print(dates[0]);
-        for (int i = 1; i < dates.length; i++) {
-            System.out.print("," + dates[i]);
-
-        }
-    }
 }
 

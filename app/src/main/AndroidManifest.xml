@@ -24,18 +24,18 @@
                 android:value="com.example.jozsef.myweekend.androidCode.NewUser" />
         </activity>
 
-        <activity android:name=".SortMenu">
+        <activity android:name=".androidCode.SortMenu">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jozsef.myweekend.SortMenu" />
+                android:value=".androidCode.SortMenu" />
         </activity>
 
-        <activity android:name=".Event_List">
+        <activity android:name=".androidCode.Event_List">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jozsef.myweekend.Event_List" />
+                android:value=".androidCode.Event_List" />
         </activity>
 
         <activity android:name=".androidCode.EventPage">
@@ -45,11 +45,11 @@
                 android:value="com.example.jozsef.myweekend.androidCode.EventPage" />
         </activity>
 
-        <activity android:name=".Create_Event">
+        <activity android:name=".androidCode.Create_Event">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jozsef.myweekend.Create_Event" />
+                android:value=".androidCode.Create_Event" />
         </activity>
 
     </application>

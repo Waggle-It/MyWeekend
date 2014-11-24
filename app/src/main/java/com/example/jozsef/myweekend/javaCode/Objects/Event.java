@@ -4,13 +4,14 @@ package com.example.jozsef.myweekend.javaCode.Objects;
  * take on.
  */
 public class Event {
-    private String title, location, date, description, submittedBy, pcEmail, pcName, eventURL;
+    private String title, location, description, submittedBy, pcEmail, pcName, eventURL;
+    private Long date;
     private Quality characteristics;
     int image, idNumber;
     private double foodCosts, ticketCosts;
     public static int id;
 
-    public Event(String title, String location, String date, String description, Quality characteristics, double foodCosts, double ticketCosts, int image, String submittedBy, String pcName, String pcEmail, String eventURL){
+    public Event(String title, String location, Long date, String description, Quality characteristics, double foodCosts, double ticketCosts, int image, String submittedBy, String pcName, String pcEmail, String eventURL){
         this.title = title;
         this.location = location;
         this.date = date;
@@ -35,7 +36,7 @@ public class Event {
     public String getLocation(){
         return location;
     }
-    public String getDate(){
+    public long getDate(){
         return date;
     }
     public String getDescription(){
@@ -57,7 +58,7 @@ public class Event {
     public void setLocation(String location){
         this.location = location;
     }
-    public void setDate(String date){
+    public void setDate(long date){
         this.date = date;
     }
     public void setDescription(String description){

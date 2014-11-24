@@ -1,4 +1,4 @@
-package com.example.jozsef.myweekend;
+package com.example.jozsef.myweekend.androidCode;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.jozsef.myweekend.R;
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.javaCode.Objects.Quality;
@@ -48,9 +49,10 @@ public class Create_Event extends Activity {
     //Method is activated when the user hits the submit button all fields necessary to create a new event are retrieved.
     private void create(){
         Quality categories;
-        String title, location, description, date, pcName, pcEmail, webLink, submittedBy;
+        String title, location, description, pcName, pcEmail, webLink, submittedBy;
         double foodCosts, ticketCosts;
         int image;
+        long date;
 
         categories = onOff();
 
@@ -108,10 +110,9 @@ public class Create_Event extends Activity {
     }
 
     //Returns Date and time variable
-    public String getEventDate() {
-        EditText date = (EditText)findViewById(R.id.Date);
-        EditText time = (EditText)findViewById(R.id.Time);
-        return date.getText().toString() + " " +time.getText().toString();
+    public long getEventDate() {
+
+        return 0;
     }
 
     //Returns Event description
