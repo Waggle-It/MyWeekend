@@ -3,8 +3,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="AddmissionPrice">Admission Price</string>
-    <string name="AmountFood">Approx. Food Cost</string>
-    <string name="AmountAddmission">Admission costs?</string>
+    <string name="AmountFood">Food Cost</string>
+    <string name="AmountAddmission">Adm. Costs?</string>
     <string name="app_name">MyWeekend</string>
     <string name="button_send">Hello world!</string>
     <string name="Catagories">Catagories</string>
@@ -64,6 +64,13 @@
     <string name="direct6">Popular</string>
     <string name="direct7">All Events</string>
     <string name="eventURL">Event URL</string>
+    <string name="Address">Address</string>
+    <string name="City">City</string>
+    <string name="State">State</string>
+    <string name="ZipCode">Zip Code</string>
+    <string name="Costs">Costs</string>
+    <string name="Required">*</string>
+    <string name="fillInRequired">Please fill in required feilds(*)</string>
 
     <string-array name="booleans">
         <item>@string/cat0</item>

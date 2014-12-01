@@ -38,7 +38,8 @@ public class EventPage extends Activity {
     }
 
     public View modifyView() {
-        SimpleDateFormat monthDay = new SimpleDateFormat("MMMMMMMMMMMM dd");
+        SimpleDateFormat monthDay = new SimpleDateFormat("MMMMMMMMMMMM dd, HH:MM");
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
 
         TextView title = (TextView) view.findViewById(R.id.textView);
         TextView dates = (TextView) view.findViewById(R.id.textView6);
@@ -47,7 +48,7 @@ public class EventPage extends Activity {
         TextView description = (TextView) view.findViewById(R.id.textView10);
 
         title.setText(EventList.getEventList().get(EventPage.eventLocation).getTitle());
-        dates.setText(monthDay.format(EventList.getEventList().get(EventPage.eventLocation).getDate()));
+        dates.setText(monthDay.format(EventList.getEventList().get(EventPage.eventLocation).getDate()) + "\n" + year.format(EventList.getEventList().get(EventPage.eventLocation).getDate()));
         location.setText(EventList.getEventList().get(EventPage.eventLocation).getLocation());
         image.setImageResource(EventList.getEventList().get(EventPage.eventLocation).getImage());
         description.setText(EventList.getEventList().get(EventPage.eventLocation).getDescription());

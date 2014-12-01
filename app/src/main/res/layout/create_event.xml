@@ -11,133 +11,298 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="@string/CreateNewEvent"
             android:id="@+id/textView"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:text="@string/fillInRequired"
+            android:id="@+id/textViewRequired"/>
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/EventTitle"
             android:hint="@string/EventTitle"
             android:inputType="textCapWords"
-            android:layout_toEndOf="@+id/Date"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textViewRequired"
             android:layout_marginTop="22dp"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/Date"
-            android:inputType="date"
+            android:inputType="datetime"
             android:maxLines="1"
             android:hint="@string/EventDate"
-            android:layout_below="@+id/EventTitle"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_below="@+id/EventTitle"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/Time"
-            android:inputType="datetime"
+            android:inputType="time"
             android:hint="@string/EventTime"
             android:layout_marginBottom="5pt"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/Date" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Location"
-            android:hint="@string/EventLocation"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/Address"
+            android:hint="@string/Address"
             android:layout_marginBottom="5pt"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/Time"/>
 
         <EditText
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/City"
+            android:hint="@string/City"
+            android:layout_marginBottom="5pt"
+            android:layout_below="@+id/Address"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="100pt"
+            android:id="@+id/State"
+            android:hint="@string/State"
+            android:layout_marginBottom="5pt"
+            android:layout_below="@+id/City"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/ZipCode"
+            android:hint="@string/ZipCode"
+            android:layout_marginBottom="5pt"
+            android:layout_below="@+id/State"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required1"
+            android:layout_alignTop="@+id/EventTitle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required2"
+            android:layout_alignTop="@+id/Date"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required3"
+            android:layout_alignTop="@+id/Time"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required4"
+            android:layout_alignTop="@+id/Address"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required5"
+            android:layout_alignTop="@+id/City"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required6"
+            android:layout_alignTop="@+id/State"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required7"
+            android:layout_alignTop="@+id/ZipCode"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required8"
+            android:layout_alignTop="@+id/Description"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required9"
+            android:layout_alignTop="@+id/pcmail"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required10"
+            android:layout_alignTop="@+id/foodCost"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:text="@string/Required"
+            android:visibility="invisible"
+            android:id="@+id/Required11"
+            android:layout_alignTop="@+id/foodCost"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:minWidth="140pt"
             android:inputType="textMultiLine"
             android:id="@+id/Description"
             android:hint="@string/desc"
             android:layout_marginBottom="5pt"
-            android:layout_below="@+id/Location"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ZipCode"
             android:singleLine="false"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_margin="5pt"
+            android:layout_centerInParent="true"
             android:text="@string/PointContact"
             android:id="@+id/textView2"
-            android:layout_below="@+id/Description"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_below="@+id/Description"/>
 
         <EditText
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/pcName"
             android:hint="@string/name"
             android:inputType="textCapWords"
             android:layout_marginBottom="5pt"
             android:layout_marginTop="5pt"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_below="@+id/textView2"/>
 
         <EditText
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/pcmail"
             android:layout_marginBottom="5pt"
+            android:inputType="textEmailAddress"
             android:layout_below="@+id/pcName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:hint="@string/Email"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/eventURL"
             android:inputType="textUri"
             android:layout_below="@id/pcmail"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:hint="@string/eventURL"
             android:layout_marginBottom="5pt"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
             android:id="@+id/PhoneNumber"
             android:inputType="phone"
             android:layout_below="@+id/eventURL"
             android:layout_marginBottom="5pt"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:hint="@string/PhoneNumber"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5pt"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Costs"
+            android:id="@+id/textViewCosts"
+            android:layout_below="@+id/PhoneNumber"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15pt"
             android:text="@string/cat6"
             android:id="@+id/food"
             android:checked="false"
-            android:layout_below="@+id/PhoneNumber"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"/>
+            android:layout_below="@+id/textViewCosts"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15pt"
+            android:maxWidth="70pt"
+            android:minWidth="70pt"
             android:id="@+id/foodCost"
             android:inputType="numberDecimal"
             android:layout_below="@+id/food"
@@ -146,22 +311,17 @@
             android:layout_alignParentStart="true"
             android:hint="@string/AmountFood"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cat19"
-            android:id="@+id/ticket"
-            android:checked="false"
-            android:layout_below="@+id/PhoneNumber"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxWidth="70pt"
+            android:minWidth="70pt"
+            android:layout_marginEnd="15pt"
             android:id="@+id/ticketCosts"
             android:inputType="numberDecimal"
-            android:layout_below="@+id/ticket"
+            android:layout_below="@+id/food"
             android:layout_marginBottom="5pt"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -173,7 +333,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/Catagories"
             android:id="@+id/textView15"
-            android:layout_marginTop="20pt"
+            android:layout_marginTop="5pt"
             android:layout_below="@+id/foodCost"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />

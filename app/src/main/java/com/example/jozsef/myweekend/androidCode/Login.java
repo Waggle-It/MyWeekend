@@ -13,11 +13,10 @@ import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.R;
 import com.example.jozsef.myweekend.javaCode.Objects.Quality;
-import com.example.jozsef.myweekend.javaCode.Objects.Sort;
+import com.example.jozsef.myweekend.javaCode.Objects.User;
+import com.example.jozsef.myweekend.sortComparators.DateSort;
 import com.example.jozsef.myweekend.javaCode.Objects.UserList;
-import com.example.jozsef.myweekend.mergeSort;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
 
@@ -39,7 +38,6 @@ public class Login extends Activity {
     //Listens for the user to submit their login information.
     public void loginSubmission() {
         Button submit = (Button) findViewById(R.id.submit);
-
         submit.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -71,6 +69,7 @@ public class Login extends Activity {
 
             @Override
             public void onClick(View v) {
+                UserList.setCurrentUser(null);
                 startActivity(new Intent(Login.this, SortMenu.class));
             }
         });
@@ -112,6 +111,14 @@ public class Login extends Activity {
         Quality characteristics = new Quality();
         long [] date = new long[20];
 
+        int[] preferancesLike = new int[21];
+
+        for (int i = 0; i < 21; i++)
+            preferancesLike[i] = 0;
+
+        User me = new User("j", "j", 61938, preferancesLike);
+        UserList.addUser(me);
+
 
         for(int i=0; i<20; i++){//builds each list element.
             double foodCosts = Math.random()*999;
@@ -122,6 +129,6 @@ public class Login extends Activity {
             EventList.getEventList().add(temp);
             //date[i]=temp.getDate();
         }
-        Collections.sort(EventList.getEventList(), new Sort());
+        Collections.sort(EventList.getEventList(), new DateSort());
     }
 }

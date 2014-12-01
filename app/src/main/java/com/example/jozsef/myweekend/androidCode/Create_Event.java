@@ -46,7 +46,6 @@ public class Create_Event extends Activity {
 
             @Override
             public void onClick(View v) {
-                VerifyCreateEvent.setDisplay(getApplicationContext());
                 if(verify()) {
                     create();
                     startActivity(new Intent(Create_Event.this, SortMenu.class));
@@ -227,11 +226,11 @@ public class Create_Event extends Activity {
     }
     public String getTime(){
         TextView time = (TextView)findViewById(R.id.Time);
-        return time.getText().toString();
+        return time.getText().toString().trim();
     }
     public String getURL(){
         TextView url = (TextView)findViewById(R.id.eventURL);
-        return url.getText().toString();
+        return url.getText().toString().trim();
     }
 
     public String getSubmittedBy(){
@@ -267,17 +266,17 @@ public class Create_Event extends Activity {
         EditText email = (EditText)findViewById(R.id.pcmail);
         if(email == null)
             return "";
-        return email.getText().toString();
+        return email.getText().toString().trim();
     }
 
     //Returns point of contact name
     public String getEventPCName() {
         EditText name = (EditText)findViewById(R.id.pcName);
-        return name.getText().toString();
+        return name.getText().toString().trim();
     }
 
     public String getEventDateString(){
-        return ((EditText)findViewById(R.id.Date)).getText().toString();
+        return ((EditText)findViewById(R.id.Date)).getText().toString().trim();
     }
     //Returns Date and time variable
     public long getEventDateLong() {
@@ -285,8 +284,7 @@ public class Create_Event extends Activity {
         DateFormat dfm = new SimpleDateFormat("yyyyMMddHHmm");
         String date = getEventDateString();
         String time = getTime();
-        String temp = "20" + date.substring(6, date.length()) + date.substring(0, 2) + date.substring(3, 5) + time.substring(0, time.indexOf(":")) + time.substring(time.indexOf(":")+1, time.length());
-        Toast.makeText(Create_Event.this, temp, Toast.LENGTH_LONG).show();
+        String temp = "20" + date.substring(6, date.length()) + date.substring(0, 2) + date.substring(3, 5) + time.substring(0, 2) + time.substring(3 , time.length());
 
         try{
             uniTime = dfm.parse(temp).getTime();
@@ -299,25 +297,25 @@ public class Create_Event extends Activity {
     //Returns Event description
     public String getEventDescription() {
         EditText desc = (EditText)findViewById(R.id.Description);
-        return desc.getText().toString();
+        return desc.getText().toString().trim();
     }
 
     //Returns Event Address
     public String getEventAddress() {
         EditText location = (EditText)findViewById(R.id.Address);
-        return location.getText().toString();
+        return location.getText().toString().trim();
     }
 
     //Returns Event City
     public String getEventCity() {
         EditText location = (EditText) findViewById(R.id.City);
-        return location.getText().toString();
+        return location.getText().toString().trim();
     }
 
         //Returns Event State
     public String getEventState() {
         EditText location = (EditText) findViewById(R.id.State);
-        return location.getText().toString();
+        return location.getText().toString().trim();
     }
 
     //Returns Event Zip Code
@@ -325,7 +323,7 @@ public class Create_Event extends Activity {
             EditText zip = (EditText)findViewById(R.id.ZipCode);
 
             try {
-                return Integer.parseInt(zip.getText().toString());
+                return Integer.parseInt(zip.getText().toString().trim());
             }
             catch(Exception e){}
 

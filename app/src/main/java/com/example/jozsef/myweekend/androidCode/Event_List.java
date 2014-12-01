@@ -13,13 +13,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jozsef.myweekend.R;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
 import java.text.SimpleDateFormat;
 
-/**I changed somthing
+/**I changed something
  * Created by Jozsef on 10/14/2014.
  */
 public class Event_List extends Activity implements AdapterView.OnItemClickListener {
@@ -46,13 +48,17 @@ public class Event_List extends Activity implements AdapterView.OnItemClickListe
 
     public void createNewEvent() {
         Button createNew = (Button) findViewById(R.id.button);
-        createNew.setOnClickListener(new View.OnClickListener() {
+        final Context display = this.getApplicationContext();
+            createNew.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Event_List.this, Create_Event.class));
-            }
-        });
+                @Override
+                public void onClick(View v) {
+                    if(UserList.getCurrentUser()==null)
+                        Toast.makeText(display, "Please log in to create an event", Toast.LENGTH_LONG).show();
+                    else
+                        startActivity(new Intent(Event_List.this, Create_Event.class));
+                }
+            });
     }
 }
 

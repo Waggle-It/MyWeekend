@@ -42,7 +42,7 @@ public class Event {
     public String getDescription(){
         return description;
     }
-    public Quality getcharacteristics(int i){
+    public Quality getcharacteristics(){
         return characteristics;
     }
     public double getFoodCosts(){

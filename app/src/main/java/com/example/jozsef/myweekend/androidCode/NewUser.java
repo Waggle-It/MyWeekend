@@ -67,8 +67,7 @@ public class NewUser extends Activity{
         EditText zip = (EditText)findViewById(R.id.Zip);
 
         try {
-            int x = Integer.parseInt(zip.getText().toString());
-            return x;
+            return Integer.parseInt(zip.getText().toString());
         }
         catch(Exception e){}
 
