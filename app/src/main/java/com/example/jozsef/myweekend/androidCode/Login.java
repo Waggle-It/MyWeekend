@@ -20,6 +20,10 @@ import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 import java.util.Collections;
 import java.util.Random;
 
+/**
+ * Simple login display that checks input, also allowing for a guest exploration of the app
+ * that prevents the creation of events, and a create new user function.
+ */
 
 public class Login extends Activity {
 

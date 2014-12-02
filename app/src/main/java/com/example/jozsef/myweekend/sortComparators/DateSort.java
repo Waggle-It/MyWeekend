@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * Created by Jozsef on 11/24/2014.
+ * This is a standard built in sort method that sorts objects by a specified parameter.
+ * The parameter date has been specified in this comparator.
  */
 public class DateSort implements Comparator <Event> {
 

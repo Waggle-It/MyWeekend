@@ -21,8 +21,11 @@ import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
 import java.text.SimpleDateFormat;
 
-/**I changed something
+/**
  * Created by Jozsef on 10/14/2014.
+ * This is the list of events that is displayed "according to the category selected" this customization
+ * of the list based on categories is possible however a method needs to be created to control
+ * what events are displayed.
  */
 public class Event_List extends Activity implements AdapterView.OnItemClickListener {
 

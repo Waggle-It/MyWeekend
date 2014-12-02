@@ -17,6 +17,8 @@ import com.example.jozsef.myweekend.R;
 
 /**
  * Created by Jozsef on 10/30/2014.
+ * Sort menu is a Grid that could be set up to change based on the users preferences
+ * to more accurately suggest categories of the users interest.
  */
 public class SortMenu extends Activity implements AdapterView.OnItemClickListener{
 

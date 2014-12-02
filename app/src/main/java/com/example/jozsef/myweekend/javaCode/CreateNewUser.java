@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
  */
 public class CreateNewUser extends NewUser {
 
+    //Creates a new user if all inputs are validated.
     public boolean create(String email, String password, String confirmPassword,int zip){
 
         int[] preferancesLike = new int[21];
@@ -28,7 +29,7 @@ public class CreateNewUser extends NewUser {
         }
         return false;
     }
-
+    //Determines if password and verify password are the same and length is 8 or greater.
     private boolean verifyPassword(String password, String confirmPassword){
         if (password.length()>7) {
             if(password.equals(confirmPassword))
@@ -42,7 +43,7 @@ public class CreateNewUser extends NewUser {
         return false;
     }
 
-
+    //verifies length 5 and all integers.
     private boolean verifyZip(int Zip){
         if(Integer.toString(Zip).length()==5) {
             return true;

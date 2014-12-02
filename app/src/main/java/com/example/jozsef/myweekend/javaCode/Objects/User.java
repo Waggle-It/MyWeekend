@@ -2,6 +2,7 @@ package com.example.jozsef.myweekend.javaCode.Objects;
 
 /**
  * Created by Jozsef on 10/31/2014.
+ * The user object that contains all the parameters that are associated with the user.
  */
 public class User {
     private String email;

@@ -16,6 +16,12 @@ import java.text.SimpleDateFormat;
  * Created by Jozsef on 10/15/2014.
  * This class inflates the parameters of the event_page xml and inputs information unique to a single
  * event based on user selection.
+ * Links and options that need to be added:
+ *      like
+ *      attend
+ *      website url
+ *      contact button functional
+ *      website url button functional
  */
 
 

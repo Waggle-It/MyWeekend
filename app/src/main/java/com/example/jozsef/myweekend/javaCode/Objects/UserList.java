@@ -2,6 +2,8 @@ package com.example.jozsef.myweekend.javaCode.Objects;
 
 /**
  * Created by Jozsef on 10/31/2014.
+ * Contains all the users in a static user list, and a current user that is controlled by the login page.
+ * It might be fun to play with security on this one. to prevent anyone from accessing the user list.
  */
 public class UserList {
     private static User currentUser;

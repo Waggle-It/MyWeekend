@@ -2,6 +2,7 @@ package com.example.jozsef.myweekend.javaCode.Objects;
 
 /**
  * Created by Elliott on 11/3/2014.
+ * A series of booleans that describe the event in question.
  */
 public class Quality {
     public boolean isVehicle() {

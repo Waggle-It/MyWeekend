@@ -12,12 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jozsef.myweekend.R;
-import com.example.jozsef.myweekend.javaCode.CreateNewUser;
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.javaCode.Objects.Quality;
 import com.example.jozsef.myweekend.javaCode.Objects.UserList;
-import com.example.jozsef.myweekend.javaCode.Objects.VerifyCreateEvent;
+import com.example.jozsef.myweekend.javaCode.VerifyCreateEvent;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -15,6 +15,8 @@ import com.example.jozsef.myweekend.R;
 
 /**
  * Created by Jozsef on 10/31/2014.
+ * This is the create new user display page with all the various inputs being sent to verifyNewUser
+ * to insure unique and accurate information before construction.
  */
 public class NewUser extends Activity{
     private static Context display;
