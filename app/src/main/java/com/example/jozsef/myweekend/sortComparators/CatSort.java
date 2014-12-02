@@ -57,7 +57,7 @@ public class CatSort {
         if(event.getcharacteristics().isCause())
             QualityList.getCauseList().add(event);
         if(event.getcharacteristics().isEducation())
-            QualityList.getEducationList().add(EventList.getEventList().get(i));
+            QualityList.getEducationList().add(event);
         if(event.getcharacteristics().isEntertainment())
             QualityList.getEducationList().add(event);
         if(event.getcharacteristics().isFashion())
@@ -80,7 +80,7 @@ public class CatSort {
             QualityList.getOutdoorList().add(event);
         if(event.getcharacteristics().isPolitics())
             QualityList.getPoliticsList().add(event);
-        if(event.getcharacteristics().isReligious()))
+        if(event.getcharacteristics().isReligious())
         QualityList.getReligiousList().add(event);
         if(event.getcharacteristics().isSports())
             QualityList.getSportsList().add(event);
