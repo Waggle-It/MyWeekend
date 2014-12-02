@@ -2,8 +2,6 @@ package com.example.jozsef.myweekend;
 
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
 
-import java.util.Random;
-import java.lang.Math;
 
 public class mergeSort {
     public static Event[] mergeSort1(Event[] list) {
@@ -14,13 +12,9 @@ public class mergeSort {
         Event[] left = new Event[list.length / 2];
         Event[] right = new Event[list.length - left.length];
 
-        for (int i = 0; i < left.length; i++) {
-            left[i] = list[i];
-        }
+        System.arraycopy(list, 0, left, 0, left.length);
 
-        for (int i = left.length; i < list.length; i++) {
-            right[i - left.length] = list[i];
-        }
+        System.arraycopy(list, left.length, right, 0, list.length - left.length);
 
         return merge(mergeSort1(left), mergeSort1(right));
     }

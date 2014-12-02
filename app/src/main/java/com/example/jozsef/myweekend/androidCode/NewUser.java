@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.jozsef.myweekend.javaCode.CreateNewUser;
+import com.example.jozsef.myweekend.javaCode.VerifyCreateNewUser;
 import com.example.jozsef.myweekend.R;
 
 
@@ -35,7 +35,7 @@ public class NewUser extends Activity{
 
             @Override
             public void onClick(View v) {
-                CreateNewUser temp = new CreateNewUser();
+                VerifyCreateNewUser temp = new VerifyCreateNewUser();
                 boolean newMember = temp.create(getEmail(), getPassword(), getConfirmPassword(), getZipCode());
 
                 if(newMember)

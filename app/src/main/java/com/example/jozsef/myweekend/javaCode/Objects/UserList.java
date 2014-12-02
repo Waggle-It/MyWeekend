@@ -12,9 +12,7 @@ public class UserList {
     public static void addUser(User nEw){
         User[] temp = new User[userList.length + 1];
 
-        for(int i=0; i<userList.length; i++){
-            temp[i] = userList[i];
-        }
+        System.arraycopy(userList, 0, temp, 0, userList.length);
         temp[userList.length] = nEw;
         userList = temp;
     }
@@ -33,10 +31,10 @@ public class UserList {
         return currentUser;
     }
 
-    public static final void setCurrentUser(int i) {
+    public static void setCurrentUser(int i) {
         UserList.currentUser = userList[i];
     }
-    public static final void setCurrentUser(User i) {
+    public static void setCurrentUser(User i) {
         UserList.currentUser = i;}
 
 }

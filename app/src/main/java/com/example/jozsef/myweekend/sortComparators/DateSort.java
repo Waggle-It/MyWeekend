@@ -3,7 +3,6 @@ package com.example.jozsef.myweekend.sortComparators;
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
 
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * Created by Jozsef on 11/24/2014.

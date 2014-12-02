@@ -1,11 +1,5 @@
 package com.example.jozsef.myweekend.javaCode;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Toast;
-
-import com.example.jozsef.myweekend.androidCode.Create_Event;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,7 +8,6 @@ import java.util.regex.Pattern;
  * This class is sent various  required values from Create_Event verifying valid input.
  */
 public class VerifyCreateEvent{
-    private static Context display;
 
     // This group of verifications are self explanitory.
     public boolean verifyTicketCosts(double cost){
@@ -39,13 +32,13 @@ public class VerifyCreateEvent{
 
     //Now only verifies correct abbreviation, if typed states are to be allowed then a function
     //needs to be written to convert state name to abbreviation so that google maps will recognize it.
-    //although havent checked to make sure google link doesn't recognize spelled out format.
+    //although haven't checked to make sure google link doesn't recognize spelled out format.
     public boolean verifyEventState(String test){
         if(test.equals("") || test.equals(" "))
             return false;
 
         String statesAb = "VA OR ID NV CA AZ UT MT WY CO NM TX OK KS NE SD ND MN IA MO AR LA MS AL GA FL SC NC TN VA KY WV OH IN MI PA NY ME NH VT MA RI CT NJ DE MD DC AK HI IL";
-        String states = "alabama alaska arizona arkansas california colorado connecticut delaware florida georgia hawaii idaho illinois indiana iowa kansas kentucky louisiana maine maryland massachusetts michigan minnesota mississippi missouri montana nebraska nevada new hampshire new jersey new mexico new york north carolina north dakota ohio oklahoma oregon pennsylvania rhode island south carolina south dakota tennessee texas utah vermont virginia washington west virginia wisconsin wyoming";
+        //String states = "alabama alaska arizona arkansas california colorado connecticut delaware florida georgia hawaii idaho illinois indiana iowa kansas kentucky louisiana maine maryland massachusetts michigan minnesota mississippi missouri montana nebraska nevada new hampshire new jersey new mexico new york north carolina north dakota ohio oklahoma oregon pennsylvania rhode island south carolina south dakota tennessee texas utah vermont virginia washington west virginia wisconsin wyoming";
         return statesAb.contains(test.toUpperCase());
     }
     //ensures format(mm/dd/yy) like us crazy americans prefer.

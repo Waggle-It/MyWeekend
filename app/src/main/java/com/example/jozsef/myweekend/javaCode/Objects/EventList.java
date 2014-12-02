@@ -1,7 +1,4 @@
 package com.example.jozsef.myweekend.javaCode.Objects;
-
-import com.example.jozsef.myweekend.javaCode.Objects.Event;
-
 import java.util.ArrayList;
 import java.util.List;
 

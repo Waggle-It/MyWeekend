@@ -9,8 +9,9 @@ import java.util.regex.Pattern;
 
 /**
  * Created by Jozsef on 11/5/2014.
+ * Verifies valid inputs from the user controlling weather the user gets created or not.
  */
-public class CreateNewUser extends NewUser {
+public class VerifyCreateNewUser extends NewUser {
 
     //Creates a new user if all inputs are validated.
     public boolean create(String email, String password, String confirmPassword,int zip){

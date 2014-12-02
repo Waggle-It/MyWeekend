@@ -113,7 +113,6 @@ public class Login extends Activity {
         int images = R.drawable.download;
 
         Quality characteristics = new Quality();
-        long [] date = new long[20];
 
         int[] preferancesLike = new int[21];
 
