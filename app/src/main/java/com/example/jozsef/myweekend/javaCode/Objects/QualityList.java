@@ -184,8 +184,5 @@ public class QualityList {
         qualityList = qualityList;
     }
     public QualityList() {}
-    public static List<Event> getQualityList(){
-        return qualityList;
-    }
 
 }
