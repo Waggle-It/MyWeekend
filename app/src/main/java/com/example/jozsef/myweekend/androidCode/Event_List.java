@@ -16,10 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jozsef.myweekend.R;
+import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 /**
  * Created by Jozsef on 10/14/2014.
@@ -67,7 +69,7 @@ public class Event_List extends Activity implements AdapterView.OnItemClickListe
 
 //Customizes list view layout......My understanding breaks down.
 class eventAdapter extends BaseAdapter
-{
+{   public static List<Event> current;
     //ArrayList<SingleRow> list;
     Context context;
 
@@ -80,7 +82,7 @@ class eventAdapter extends BaseAdapter
 
     @Override
     public int getCount() {
-        return EventList.getEventList().size();
+        return current.size();
     }
 
     @Override
@@ -108,9 +110,9 @@ class eventAdapter extends BaseAdapter
         ImageView image = (ImageView) row.findViewById(R.id.imageView2);
 
         //Changes the values
-        title.setText(EventList.getEventList().get(i).getTitle());
-        dates.setText(monthDay.format(EventList.getEventList().get(i).getDate()));
-        image.setImageResource(EventList.getEventList().get(i).getImage());
+        title.setText(current.get(i).getTitle());
+        dates.setText(monthDay.format(current.get(i).getDate()));
+        image.setImageResource(current.get(i).getImage());
 
         return row;
 

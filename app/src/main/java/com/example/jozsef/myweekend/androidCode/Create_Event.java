@@ -17,9 +17,12 @@ import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.javaCode.Objects.Quality;
 import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 import com.example.jozsef.myweekend.javaCode.VerifyCreateEvent;
+import com.example.jozsef.myweekend.sortComparators.CatSort;
+import com.example.jozsef.myweekend.sortComparators.DateSort;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 
 
 /**
@@ -221,6 +224,8 @@ public class Create_Event extends Activity {
 
         Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image, submittedBy, pcName, pcEmail, webLink);
         EventList.getEventList().add(nEw);
+        Collections.sort(EventList.getEventList(), new DateSort());
+        CatSort.eventSort(nEw);
 
     }
     public String getTime(){

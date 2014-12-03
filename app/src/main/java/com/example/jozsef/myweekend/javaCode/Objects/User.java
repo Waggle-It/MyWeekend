@@ -1,5 +1,7 @@
 package com.example.jozsef.myweekend.javaCode.Objects;
 
+import java.util.List;
+
 /**
  * Created by Jozsef on 10/31/2014.
  * The user object that contains all the parameters that are associated with the user.
@@ -11,6 +13,7 @@ public class User {
     private int zipCode;
     private int[] preferancesAttended;
     private int[] preferancesLike;
+    private List<Event> myWeekend;
 
 
     public User(String email, String password, int zipCode, int[] preferancesLike){
@@ -52,5 +55,13 @@ public class User {
 
     public void setPreferancesLike(int[] preferancesLike) {
         this.preferancesLike = preferancesLike;
+    }
+
+    public List<Event> getMyWeekend() {
+        return myWeekend;
+    }
+
+    public void addMyWeekend(Event myWeekend) {
+        this.myWeekend.add(myWeekend);
     }
 }

@@ -6,10 +6,10 @@ import com.example.jozsef.myweekend.javaCode.Objects.QualityList;
 
 /**
  * Created by Jozsef on 11/24/2014.
- * IDK need to figure out how to implement a category sort that is efficient.
+ * IDK need to figure out how to implement a category sort that is efficient.-SOLVED
  */
 public class CatSort {
-    public void eventSort(){
+    public static void eventSort(){
         for(int i = 0; i < EventList.getEventList().size(); i++) {
             if(EventList.getEventList().get(i).getcharacteristics().isBusiness())
               QualityList.getBuisnessList().add(EventList.getEventList().get(i));
@@ -48,10 +48,10 @@ public class CatSort {
             if(EventList.getEventList().get(i).getcharacteristics().isVehicle())
                 QualityList.getVehicleList().add(EventList.getEventList().get(i));
             if(EventList.getEventList().get(i).getcharacteristics().isVisual_arts())
-                QualityList.getVehicleList().add(EventList.getEventList().get(i));
+                QualityList.getArtsList().add(EventList.getEventList().get(i));
         }
     }
-    public void eventSort(Event event){
+    public static void eventSort(Event event){
         if(event.getcharacteristics().isBusiness())
             QualityList.getBuisnessList().add(event);
         if(event.getcharacteristics().isCause())
@@ -89,6 +89,6 @@ public class CatSort {
         if(event.getcharacteristics().isVehicle())
             QualityList.getVehicleList().add(event);
         if(event.getcharacteristics().isVisual_arts())
-            QualityList.getVehicleList().add(event);
+            QualityList.getArtsList().add(event);
     }
 }

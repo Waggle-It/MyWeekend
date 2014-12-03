@@ -63,6 +63,7 @@
     <string name="direct5">Recommended</string>
     <string name="direct6">Popular</string>
     <string name="direct7">All Events</string>
+
     <string name="eventURL">Event URL</string>
     <string name="Address">Address</string>
     <string name="City">City</string>

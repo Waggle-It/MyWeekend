@@ -14,9 +14,11 @@ import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.R;
 import com.example.jozsef.myweekend.javaCode.Objects.Quality;
 import com.example.jozsef.myweekend.javaCode.Objects.User;
+import com.example.jozsef.myweekend.sortComparators.CatSort;
 import com.example.jozsef.myweekend.sortComparators.DateSort;
 import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
 
@@ -112,8 +114,6 @@ public class Login extends Activity {
         //int [] images ={R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher};
         int images = R.drawable.download;
 
-        Quality characteristics = new Quality();
-
         int[] preferancesLike = new int[21];
 
         for (int i = 0; i < 21; i++)
@@ -128,10 +128,58 @@ public class Login extends Activity {
             double ticketCosts = Math.random()*999;
             //list.add(new SingleRow(titles[i], dates[i], images));
             long dates = (1414713600 + Math.abs(new Random().nextLong())%(1420113599 - 1414713600 ))*1000L;
-            Event temp = new Event( titles[i], location[i], dates, description, characteristics, foodCosts, ticketCosts, images, "", "", "", "");
+            Event temp = new Event( titles[i], location[i], dates, description, rand(), foodCosts, ticketCosts, images, "", "", "", "");
             EventList.getEventList().add(temp);
             //date[i]=temp.getDate();
         }
         Collections.sort(EventList.getEventList(), new DateSort());
+        CatSort.eventSort();
+    }
+    public Quality rand(){
+        Quality temp = new Quality();
+        if((int)(Math.random()*2) == 0)
+            temp.setFood(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setCause(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setSports(true);
+        if((int)(Math.random()*20) == 0)
+            temp.setBusiness(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setTechnology(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setEducation(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setEducation(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setEntertainment(true);
+        if(Math.random()*2 == 0)
+            temp.setFashion(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setHealth(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setHobbies(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setHoliday(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setLifestyle(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setMusic(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setOther(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setOutdoor(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setPolitics(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setReligious(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setSports(true);
+        if((int)(Math.random()*2) == 0)
+            temp.setVisual_arts(true);
+        if((int)(Math.random()*20) == 0)
+            temp.setVehicle(true);
+
+        return temp;
     }
 }

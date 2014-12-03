@@ -11,9 +11,12 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jozsef.myweekend.R;
+import com.example.jozsef.myweekend.javaCode.Objects.QualityList;
 
 /**
  * Created by Jozsef on 10/30/2014.
@@ -32,11 +35,18 @@ public class SortMenu extends Activity implements AdapterView.OnItemClickListene
         Grid.setAdapter(new sortAdapter(this));//Calls method eventAdapter which customizes the layout.
         Grid.setOnItemClickListener(this);//recieves user input.
     }
+
     @Override//Directs display based on user input.
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//EventPage.eventLocation = i;//sinks the array location selected with that of the displayed.
+    //EventPage.eventLocation = i;//sinks the array location selected with that of the displayed.
+        String[] categories = this.getResources().getStringArray(R.array.sort);
+        eventAdapter.current = QualityList.getEventList(categories[i]);//sinks the array location selected with that of the displayed.
+        QualityList.context = this;
         Intent intent = new Intent(SortMenu.this, Event_List.class);//required to change java class.
         startActivity(intent);
+    }
+    public void error(){
+        Toast.makeText(SortMenu.this, "Password does not match email address", Toast.LENGTH_LONG).show();
     }
 }
 
@@ -86,4 +96,5 @@ class sortAdapter extends BaseAdapter
         return block;
 
     }
+
 }
