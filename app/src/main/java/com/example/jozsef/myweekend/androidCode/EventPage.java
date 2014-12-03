@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.R;
 
@@ -42,6 +43,13 @@ public class EventPage extends Activity {
         setContentView(view);
 
     }
+    public Event findEvent(){
+        for(int i = 0; i<EventList.getEventList().size(); i++)
+            if(eventLocation == EventList.getEventList().get(i).idNumber)
+                return EventList.getEventList().get(i);
+        return null;
+    }
+
 
     public View modifyView() {
         SimpleDateFormat monthDay = new SimpleDateFormat("MMMMMMMMMMMM dd, HH:MM");
@@ -53,11 +61,13 @@ public class EventPage extends Activity {
         ImageView image = (ImageView) view.findViewById(R.id.imageView);
         TextView description = (TextView) view.findViewById(R.id.textView10);
 
-        title.setText(EventList.getEventList().get(EventPage.eventLocation).getTitle());
-        dates.setText(monthDay.format(EventList.getEventList().get(EventPage.eventLocation).getDate()) + "\n" + year.format(EventList.getEventList().get(EventPage.eventLocation).getDate()));
-        location.setText(EventList.getEventList().get(EventPage.eventLocation).getLocation());
-        image.setImageResource(EventList.getEventList().get(EventPage.eventLocation).getImage());
-        description.setText(EventList.getEventList().get(EventPage.eventLocation).getDescription());
+        Event event = findEvent();
+
+        title.setText(event.getTitle());
+        dates.setText(monthDay.format(event.getDate()) + "\n" + year.format(event.getDate()));
+        location.setText(event.getLocation());
+        image.setImageResource(event.getImage());
+        description.setText(event.getDescription());
 
         return view;
     }
