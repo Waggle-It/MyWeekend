@@ -72,6 +72,10 @@
     <string name="Costs">Costs</string>
     <string name="Required">*</string>
     <string name="fillInRequired">Please fill in required feilds(*)</string>
+    <string name="EventSearch">Event Search</string>
+    <string name="SizeOfParty">Size of party</string>
+    <string name="Budget">Budget</string>
+    <string name="Hungry">Hungry?</string>
 
     <string-array name="booleans">
         <item>@string/cat0</item>

@@ -117,8 +117,6 @@ public class QualityList {
     }
     public QualityList() {}
 
-    public static Context context;
-
     public static List<Event> getEventList(String cat){
 
         if(cat.equals("Search"))

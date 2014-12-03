@@ -52,6 +52,13 @@
                 android:value=".androidCode.Create_Event" />
         </activity>
 
+        <activity android:name=".androidCode.Search">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".androidCode.Create_Event" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jozsef.myweekend.R;
+import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.javaCode.Objects.QualityList;
 
 /**
@@ -41,12 +42,10 @@ public class SortMenu extends Activity implements AdapterView.OnItemClickListene
     //EventPage.eventLocation = i;//sinks the array location selected with that of the displayed.
         String[] categories = this.getResources().getStringArray(R.array.sort);
         eventAdapter.current = QualityList.getEventList(categories[i]);//sinks the array location selected with that of the displayed.
-        QualityList.context = this;
         Intent intent = new Intent(SortMenu.this, Event_List.class);//required to change java class.
+        if(i == 0)
+            intent = new Intent(SortMenu.this, Search.class);
         startActivity(intent);
-    }
-    public void error(){
-        Toast.makeText(SortMenu.this, "Password does not match email address", Toast.LENGTH_LONG).show();
     }
 }
 

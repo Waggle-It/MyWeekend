@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/createEvent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/EventSearch"
+            android:id="@+id/textView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:text="@string/fillInRequired"
+            android:id="@+id/textViewRequired"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/EventTitle"
+            android:hint="@string/EventTitle"
+            android:inputType="textCapWords"
+            android:layout_below="@+id/textViewRequired"
+            android:layout_marginTop="22dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/Date"
+            android:inputType="datetime"
+            android:maxLines="1"
+            android:hint="@string/EventDate"
+            android:layout_below="@+id/EventTitle"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/ZipCode"
+            android:hint="@string/ZipCode"
+            android:layout_marginBottom="5pt"
+            android:layout_below="@+id/Date"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5pt"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Costs"
+            android:id="@+id/textViewCosts"
+            android:layout_below="@+id/ZipCode"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15pt"
+            android:text="@string/Hungry"
+            android:id="@+id/food"
+            android:checked="false"
+            android:layout_below="@+id/textViewCosts"
+            android:layout_centerInParent="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15pt"
+            android:maxWidth="70pt"
+            android:minWidth="70pt"
+            android:id="@+id/foodCost"
+            android:inputType="numberDecimal"
+            android:layout_below="@+id/food"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/Budget"/>
+
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="70pt"
+            android:minWidth="70pt"
+            android:layout_marginEnd="15pt"
+            android:id="@+id/ticketCosts"
+            android:inputType="numberDecimal"
+            android:layout_below="@+id/food"
+            android:layout_marginBottom="5pt"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:hint="@string/SizeOfParty"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Catagories"
+            android:id="@+id/textView15"
+            android:layout_marginTop="5pt"
+            android:layout_below="@+id/foodCost"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat5"
+            android:id="@+id/FilmMediaEntertainment"
+            android:layout_toEndOf="@+id/CharityCauses"
+            android:checked="false"
+            android:layout_below="@+id/FamilyEducation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat3"
+            android:id="@+id/FamilyEducation"
+            android:layout_toEndOf="@+id/Date"
+            android:checked="false"
+            android:layout_below="@+id/BusinessProfessional"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat4"
+            android:id="@+id/FashionBeauty"
+            android:checked="false"
+            android:layout_below="@+id/CharityCauses"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat1"
+            android:id="@+id/BusinessProfessional"
+            android:checked="false"
+            android:layout_below="@+id/TravelOutdoor"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat0"
+            android:id="@+id/AutoBoatAir"
+            android:checked="false"
+            android:layout_below="@+id/textView15"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat2"
+            android:id="@+id/CharityCauses"
+            android:checked="false"
+            android:layout_below="@id/AutoBoatAir"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat7"
+            android:id="@+id/FoodDrink"
+            android:checked="false"
+            android:layout_below="@+id/FashionBeauty"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat8"
+            android:id="@+id/GovernmentPolitics"
+            android:checked="false"
+            android:layout_below="@+id/FilmMediaEntertainment"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat9"
+            android:id="@+id/HealthWellness"
+            android:layout_below="@+id/FoodDrink"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat11"
+            android:id="@+id/HomeLifestyle"
+            android:layout_below="@+id/HealthWellness"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat10"
+            android:id="@+id/HobbiesSpecialInterest"
+            android:layout_below="@+id/GovernmentPolitics"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat14"
+            android:id="@+id/PerformingVisualArts"
+            android:checked="false"
+            android:layout_below="@+id/HobbiesSpecialInterest"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat12"
+            android:id="@+id/Music"
+            android:checked="false"
+            android:layout_below="@+id/HomeLifestyle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat16"
+            android:id="@+id/ScienceTechnology"
+            android:layout_below="@+id/Music"
+            android:checked="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat15"
+            android:id="@+id/ReligionSpirituality"
+            android:checked="false"
+            android:layout_below="@+id/PerformingVisualArts"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat17"
+            android:id="@+id/SeasonalHoliday"
+            android:layout_below="@+id/ScienceTechnology"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat20"
+            android:id="@+id/TravelOutdoor"
+            android:layout_below="@+id/SeasonalHoliday"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat18"
+            android:id="@+id/SportsFitness"
+            android:layout_below="@+id/ReligionSpirituality"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat13"
+            android:id="@+id/Other"
+            android:layout_below="@+id/SportsFitness"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oK"
+            android:id="@+id/button"
+            android:layout_below="@+id/Other"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</ScrollView>

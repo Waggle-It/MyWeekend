@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class Event_List extends Activity implements AdapterView.OnItemClickListener {
 
-
+    public static int[] eventLocation;
     ListView list;//consolidates the objects created for each set of data.
 
     @Override//this method is required to link this java file to the android xml file eventselector.
@@ -46,7 +46,7 @@ public class Event_List extends Activity implements AdapterView.OnItemClickListe
 
     @Override//Directs display based on user input.
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        EventPage.eventLocation = i;//sinks the array location selected with that of the displayed.
+        EventPage.eventLocation = eventAdapter.current.get(i).idNumber;//sinks the array location selected with that of the displayed.
         Intent intent = new Intent(Event_List.this, EventPage.class);//required to change java class.
         startActivity(intent);
     }

@@ -7,7 +7,7 @@ public class Event {
     private String title, location, description, submittedBy, pcEmail, pcName, eventURL;
     private Long date;
     private Quality characteristics;
-    int image, idNumber;
+    public int image, idNumber;
     private double foodCosts, ticketCosts;
     public static int id;
 
