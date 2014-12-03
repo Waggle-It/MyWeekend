@@ -2,6 +2,7 @@ package com.example.jozsef.myweekend.sortComparators;
 
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+import com.example.jozsef.myweekend.javaCode.Objects.Quality;
 import com.example.jozsef.myweekend.javaCode.Objects.QualityList;
 
 /**
@@ -49,9 +50,14 @@ public class CatSort {
                 QualityList.getVehicleList().add(EventList.getEventList().get(i));
             if(EventList.getEventList().get(i).getcharacteristics().isVisual_arts())
                 QualityList.getArtsList().add(EventList.getEventList().get(i));
+            if(EventList.getEventList().get(i).getcharacteristics().isHasFood())
+                QualityList.getHasFood().add(EventList.getEventList().get(i));
+            if(EventList.getEventList().get(i).getTicketCosts()>0)
+                QualityList.getAdminCost().add(EventList.getEventList().get(i));
         }
     }
     public static void eventSort(Event event){
+        nullifyQualityList();
         if(event.getcharacteristics().isBusiness())
             QualityList.getBuisnessList().add(event);
         if(event.getcharacteristics().isCause())
@@ -90,5 +96,32 @@ public class CatSort {
             QualityList.getVehicleList().add(event);
         if(event.getcharacteristics().isVisual_arts())
             QualityList.getArtsList().add(event);
+        if(event.getcharacteristics().isHasFood())
+            QualityList.getHasFood().add(event);
+        if(event.getTicketCosts()>0)
+            QualityList.getAdminCost().add(event);
+    }
+    public static void nullifyQualityList(){
+        QualityList.getArtsList().clear();
+        QualityList.getBuisnessList().clear();
+        QualityList.getCauseList().clear();
+        QualityList.getEducationList().clear();
+        QualityList.getEntertainmentList().clear();
+        QualityList.getFashionList().clear();
+        QualityList.getFoodList().clear();
+        QualityList.getHealthList().clear();
+        QualityList.getHobbiesList().clear();
+        QualityList.getLifestyleList().clear();
+        QualityList.getMusicList().clear();
+        QualityList.getOtherList().clear();
+        QualityList.getOutdoorList().clear();
+        QualityList.getPoliticsList().clear();
+        QualityList.getReligiousList().clear();
+        QualityList.getSportsList().clear();
+        QualityList.getTechList().clear();
+        QualityList.getVehicleList().clear();
+        QualityList.getHollidayList().clear();
+        QualityList.getHasFood().clear();
+        QualityList.getAdminCost().clear();
     }
 }
