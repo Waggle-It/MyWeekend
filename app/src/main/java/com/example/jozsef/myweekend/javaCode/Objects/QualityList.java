@@ -33,6 +33,9 @@ public class QualityList {
     private static List<Event> artsList= new ArrayList<Event>();
     private static List<Event> religiousList= new ArrayList<Event>();
     private static List<Event> sportsList= new ArrayList<Event>();
+    private static List<Event> hasFood= new ArrayList<Event>();
+    private static List<Event> adminCost = new ArrayList<Event>();
+
 
     public static List<Event> getVehicleList() {
         return vehicleList;
@@ -110,6 +113,54 @@ public class QualityList {
         return otherList;
     }
 
+    public static List<Event> getHasFood() {return hasFood;}
+
+    public static List<Event> getAdminCost() {return adminCost;}
+
+    public static void setAdminCost(List<Event> adminCost) {QualityList.adminCost = adminCost;}
+
+    public static void setHasFood(List<Event> hasFood) {QualityList.hasFood = hasFood;}
+
+    public static void setCauseList(List<Event> causeList) {QualityList.causeList = causeList;}
+
+    public static void setVehicleList(List<Event> vehicleList) {QualityList.vehicleList = vehicleList;}
+
+    public static void setFashionList(List<Event> fashionList) {QualityList.fashionList = fashionList;}
+
+    public static void setHealthList(List<Event> healthList) {QualityList.healthList = healthList;}
+
+    public static void setMusicList(List<Event> musicList) {QualityList.musicList = musicList;}
+
+    public static void setFoodList(List<Event> foodList) {QualityList.foodList = foodList;}
+
+    public static void setLifestyleList(List<Event> lifestyleList) {QualityList.lifestyleList = lifestyleList;}
+
+    public static void setTechList(List<Event> techList) {QualityList.techList = techList;}
+
+    public static void setHollidayList(List<Event> hollidayList) {QualityList.hollidayList = hollidayList;}
+
+    public static void setOutdoorList(List<Event> outdoorList) {QualityList.outdoorList = outdoorList;}
+
+    public static void setBuisnessList(List<Event> buisnessList) {QualityList.buisnessList = buisnessList;}
+
+    public static void setPoliticsList(List<Event> politicsList) {QualityList.politicsList = politicsList;}
+
+    public static void setEducationList(List<Event> educationList) {QualityList.educationList = educationList;}
+
+    public static void setEntertainmentList(List<Event> entertainmentList) {QualityList.entertainmentList = entertainmentList;}
+
+    public static void setHobbiesList(List<Event> hobbiesList) {QualityList.hobbiesList = hobbiesList;}
+
+    public static void setArtsList(List<Event> artsList) {QualityList.artsList = artsList;}
+
+    public static void setReligiousList(List<Event> religiousList) {QualityList.religiousList = religiousList;}
+
+    public static void setSportsList(List<Event> sportsList) {QualityList.sportsList = sportsList;}
+
+    public static void setOtherList(List<Event> otherList) {QualityList.otherList = otherList;}
+
+
+
     private static List<Event> otherList= new ArrayList<Event>();
     public QualityList(List<Event> qualityList)
     {
@@ -155,8 +206,8 @@ public class QualityList {
             return getFashionList();
         if(cat.equals("Film, Media & Entertainment"))
             return getEntertainmentList();
-        if(cat.equals("Food Served?"));
-
+        if(cat.equals("Food Served?"))
+            return getHasFood();
         if(cat.equals("Food Drink"))
             return getFoodList();
         if(cat.equals("Government & Politics"))
@@ -188,5 +239,4 @@ public class QualityList {
 
         return EventList.getEventList();
     }
-
 }

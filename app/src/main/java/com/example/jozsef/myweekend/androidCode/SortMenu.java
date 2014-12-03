@@ -64,7 +64,7 @@ class sortAdapter extends BaseAdapter
 
     @Override
     public int getCount() {
-        return 10;
+        return 28;
     }
 
     @Override

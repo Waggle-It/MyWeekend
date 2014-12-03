@@ -230,6 +230,8 @@ public class Create_Event extends Activity {
     }
     public String getTime(){
         TextView time = (TextView)findViewById(R.id.Time);
+        if(time.length() == 4)
+            return "0" + time.getText().toString().trim();
         return time.getText().toString().trim();
     }
     public String getURL(){
@@ -319,7 +321,7 @@ public class Create_Event extends Activity {
         //Returns Event State
     public String getEventState() {
         EditText location = (EditText) findViewById(R.id.State);
-        return location.getText().toString().trim();
+        return location.getText().toString().trim().toUpperCase();
     }
 
     //Returns Event Zip Code
@@ -379,6 +381,7 @@ public class Create_Event extends Activity {
         temp.setHealth(healthWellness.isChecked());
         temp.setHobbies(hobbiesSpecialInterest.isChecked());
         temp.setLifestyle(homeLifestyle.isChecked());
+        temp.setHasFood(foodDrink.isChecked());
         temp.setFood(food.isChecked());
         temp.setMusic(music.isChecked());
         temp.setOther(other.isChecked());

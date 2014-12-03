@@ -25,6 +25,10 @@ public class Quality {
         return fashion;
     }
 
+    public void setHasFood(boolean food){hasFood = food;}
+
+    public boolean isHasFood(){return hasFood;}
+
     public void setFashion(boolean fashion) {
         this.fashion = fashion;
     }
@@ -161,6 +165,7 @@ public class Quality {
     private boolean cause;
     private boolean fashion;
     private boolean food;
+    private boolean hasFood;
     private boolean health;
     private boolean music;
     private boolean lifestyle;
