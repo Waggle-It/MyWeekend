@@ -23,7 +23,7 @@ public class VerifyCreateNewUser extends NewUser {
                 preferancesLike[i] = 0;
 
 
-            User newUser = new User(email, password, zip, preferancesLike);
+            User newUser = new User(email, password, zip);
             UserList.addUser(newUser);
 
             return true;

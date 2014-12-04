@@ -4,22 +4,24 @@ package com.example.jozsef.myweekend.javaCode.Objects;
  * take on.
  */
 public class Event {
-    private String title, location, description, submittedBy, pcEmail, pcName, eventURL;
+    private String title, location, description, submittedBy, pcEmail, pcName, eventURL, pcPhone;
     private Long date;
     private Quality characteristics;
     public int image, idNumber;
     private double foodCosts, ticketCosts;
     public static int id;
 
-    public Event(String title, String location, Long date, String description, Quality characteristics, double foodCosts, double ticketCosts, int image, String submittedBy, String pcName, String pcEmail, String eventURL){
+    public Event(String title, String location, Long date, String description, Quality characteristics, double foodCosts, double ticketCosts, int image, String submittedBy, String pcName, String pcEmail, String eventURL, String phone){
         this.title = title;
         this.location = location;
+
         this.date = date;
         this.description = description;
         this.characteristics = characteristics;
         this.foodCosts = foodCosts;
         this.ticketCosts = ticketCosts;
         this.image = image;
+        this.pcPhone = phone;
         this.submittedBy = submittedBy;
         this.pcEmail = pcEmail;
         this.pcName = pcName;
@@ -97,5 +99,13 @@ public class Event {
 
     public void setEventURL(String eventURL) {
         this.eventURL = eventURL;
+    }
+
+    public String getPcPhone() {
+        return pcPhone;
+    }
+
+    public void setPcPhone(String pcPhone) {
+        this.pcPhone = pcPhone;
     }
 }

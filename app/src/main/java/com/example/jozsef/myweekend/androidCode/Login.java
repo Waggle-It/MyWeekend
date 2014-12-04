@@ -114,12 +114,7 @@ public class Login extends Activity {
         //int [] images ={R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher};
         int images = R.drawable.download;
 
-        int[] preferancesLike = new int[21];
-
-        for (int i = 0; i < 21; i++)
-            preferancesLike[i] = 0;
-
-        User me = new User("j", "j", 61938, preferancesLike);
+        User me = new User("j", "j", 61938);
         UserList.addUser(me);
 
 
@@ -128,7 +123,7 @@ public class Login extends Activity {
             double ticketCosts = Math.random()*999;
             //list.add(new SingleRow(titles[i], dates[i], images));
             long dates = (1414713600 + Math.abs(new Random().nextLong())%(1420113599 - 1414713600 ))*1000L;
-            Event temp = new Event( titles[i], location[i], dates, description, rand(), foodCosts, ticketCosts, images, "", "", "", "");
+            Event temp = new Event( titles[i], location[i], dates, description, rand(), foodCosts, ticketCosts, images, "", "", "", "", "");
             EventList.getEventList().add(temp);
             //date[i]=temp.getDate();
         }

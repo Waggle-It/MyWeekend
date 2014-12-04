@@ -201,7 +201,7 @@ public class Create_Event extends Activity {
     //Method is activated when the user hits the submit button all fields necessary to create a new event are retrieved.
     private void create(){
         Quality categories;
-        String title, location, description, pcName, pcEmail, webLink, submittedBy;
+        String title, location, description, pcName, pcEmail, webLink, submittedBy, phone;
         double foodCosts, ticketCosts;
         int image;
         long date;
@@ -216,13 +216,14 @@ public class Create_Event extends Activity {
         pcEmail = getPCEmail();
         submittedBy = getSubmittedBy();
         webLink = getURL();
+        phone = getPhoneNum();
 
         foodCosts = getEventFoodCosts();
         ticketCosts = getEventTicketCosts();
 
         image = getImage();
 
-        Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image, submittedBy, pcName, pcEmail, webLink);
+        Event nEw = new Event(title, location, date, description, categories, foodCosts, ticketCosts, image, submittedBy, pcName, pcEmail, webLink, phone);
         EventList.getEventList().add(nEw);
         Collections.sort(EventList.getEventList(), new DateSort());
         CatSort.eventSort(nEw);
@@ -236,7 +237,8 @@ public class Create_Event extends Activity {
     }
     public String getURL(){
         TextView url = (TextView)findViewById(R.id.eventURL);
-        return url.getText().toString().trim();
+
+        return url.getText().toString().replaceAll("\\s+","");
     }
 
     public String getSubmittedBy(){
@@ -340,6 +342,11 @@ public class Create_Event extends Activity {
     public String getEventTitle(){
         EditText title = (EditText)findViewById(R.id.EventTitle);
         return title.getText().toString();
+    }
+
+    public String getPhoneNum(){
+        EditText phone = (EditText)findViewById(R.id.PhoneNumber);
+        return phone.getText().toString().trim();
     }
 
     public int getImage (){return R.drawable.ic_launcher;}

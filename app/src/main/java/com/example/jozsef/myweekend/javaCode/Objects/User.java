@@ -1,5 +1,8 @@
 package com.example.jozsef.myweekend.javaCode.Objects;
 
+import com.example.jozsef.myweekend.androidCode.Event_List;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,18 +14,16 @@ public class User {
     private String email;
     private String password;
     private int zipCode;
-    private int[] preferancesAttended;
-    private int[] preferancesLike;
-    private List<Event> myWeekend;
+    private UserPreferences preferancesAttended = new UserPreferences();
+    private UserPreferences preferancesLike = new UserPreferences();
+    private List<Event> myWeekend = new ArrayList<Event>();
 
 
-    public User(String email, String password, int zipCode, int[] preferancesLike){
+    public User(String email, String password, int zipCode){
         this.email = email;
         this.password = password;
         this.zipCode = zipCode;
 
-        this.preferancesLike = preferancesLike;
-        this.preferancesAttended = preferancesLike;
     }
 
     public String getEmail() {
@@ -49,19 +50,19 @@ public class User {
         this.zipCode = zipCode;
     }
 
-    public void setPreferancesAttended(int[] preferancesAttended) {
-        this.preferancesAttended = preferancesAttended;
-    }
-
-    public void setPreferancesLike(int[] preferancesLike) {
-        this.preferancesLike = preferancesLike;
-    }
-
     public List<Event> getMyWeekend() {
         return myWeekend;
     }
 
     public void addMyWeekend(Event myWeekend) {
         this.myWeekend.add(myWeekend);
+    }
+
+    public UserPreferences getPreferancesLike() {
+        return preferancesLike;
+    }
+
+    public UserPreferences getPreferancesAttended() {
+        return preferancesAttended;
     }
 }
