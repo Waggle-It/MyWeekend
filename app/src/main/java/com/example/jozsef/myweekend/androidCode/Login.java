@@ -18,6 +18,7 @@ import com.example.jozsef.myweekend.sortComparators.CatSort;
 import com.example.jozsef.myweekend.sortComparators.DateSort;
 import com.example.jozsef.myweekend.javaCode.Objects.UserList;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
 
