@@ -4,7 +4,15 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/event_page_frame">
-
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_alignBaseline="@+id/textView8"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:id="@+id/scrollViewMain">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -15,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="6pt"
             android:text="Large Text"
             android:id="@+id/textView"
             android:layout_marginBottom="3pt"
@@ -25,6 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="6pt"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Small Text"
             android:id="@+id/textView6"
@@ -46,59 +56,128 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_marginLeft="6pt"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Small Text"
+            android:maxWidth="100pt"
             android:id="@+id/textView8"
             android:autoLink="map"
             android:layout_below="@+id/textView6"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
-
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="350dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_alignBaseline="@+id/textView8"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/textView11"
+            android:text="Submitted by: "
+            android:layout_marginLeft="6pt"
+            android:layout_below="@id/textView8"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submittedBy"
+            android:text="username"
+            android:layout_toRightOf="@id/textView11"
+            android:layout_below="@id/textView8"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8pt"
+            android:layout_marginBottom="8pt"
+            android:layout_below="@id/textView11"
+            android:layout_marginLeft="6pt"
+            android:layout_marginRight="6pt"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/desc"
             android:id="@+id/textView10" />
 
-        </LinearLayout>
-        </ScrollView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attend"
+            android:layout_margin="3pt"
+            android:textSize="12pt"
+            android:id="@+id/buttonAttend"
+            android:layout_below="@id/textView10"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3pt"
+            android:visibility="visible"
+            android:text="Add to Your Weekend"
+            android:layout_below="@id/buttonAttend"
+            android:id="@+id/buttonYourWeekend"
+            android:textSize="12pt"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:visibility="invisible"
+            android:layout_margin="3pt"
+            android:textSize="12pt"
+            android:layout_below="@id/buttonYourWeekend"
+            android:id="@+id/buttonContact"
+            android:layout_alignParentLeft="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3pt"
+            android:text="Like"
+            android:textSize="12pt"
+            android:id="@+id/buttonLike"
+            android:layout_below="@id/textView10"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Url"
+            android:textSize="12pt"
+            android:visibility="gone"
+            android:layout_margin="3pt"
+            android:id="@+id/buttonUrl"
+            android:layout_below="@id/buttonYourWeekend"
+            android:layout_alignParentRight="true"/>
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonContact"
+        android:text=""
+        android:autoLink="web"
+        android:visibility="gone"
+        android:layout_alignLeft="@id/buttonContact"
+        android:id="@+id/url"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/url"
+            android:text="Name"
+            android:visibility="gone"
+            android:id="@+id/pcName"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pcName"
+            android:text="email"
+            android:visibility="gone"
+            android:autoLink="email"
+            android:id="@+id/pcEmail"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pcEmail"
+            android:text="phone"
+            android:autoLink="phone"
+            android:visibility="gone"
+            android:id="@+id/pcPhone"/>
 
     </RelativeLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="left|bottom" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buy tickets"
-        android:id="@+id/button2"
-        android:layout_alignBottom="@+id/button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="right|bottom" />
-
-
+    </ScrollView>
 </FrameLayout>
