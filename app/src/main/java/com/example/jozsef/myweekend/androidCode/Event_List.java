@@ -97,7 +97,8 @@ class eventAdapter extends BaseAdapter
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        SimpleDateFormat monthDay = new SimpleDateFormat("MMMMMMMMMMMM dd");
+        SimpleDateFormat monthDay = new SimpleDateFormat("MMMMMMMMMMMM dd, HH:mm");
+
 
 
         //inflater allows for easy access to modify existing values of xml files. Alowing us to match the layout of single_row.
@@ -108,6 +109,14 @@ class eventAdapter extends BaseAdapter
         TextView title = (TextView) row.findViewById(R.id.textView8);
         TextView dates = (TextView) row.findViewById(R.id.textView9);
         ImageView image = (ImageView) row.findViewById(R.id.imageView2);
+        ImageView food = (ImageView) row.findViewById(R.id.imageView3);
+        TextView tcosts = (TextView) row.findViewById(R.id.textView3);
+
+        if(current.get(i).getcharacteristics().isHasFood())
+            food.setVisibility(View.VISIBLE);
+
+        if(current.get(i).getTicketCosts()>0)
+            tcosts.setText("Addmision costs: " + current.get(i).getTicketCosts());
 
         //Changes the values
         title.setText(current.get(i).getTitle());
