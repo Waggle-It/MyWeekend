@@ -197,7 +197,7 @@
             android:text="@string/Required"
             android:visibility="invisible"
             android:id="@+id/Required10"
-            android:layout_alignTop="@+id/foodCost"/>
+            android:layout_alignTop="@+id/Budget"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -208,7 +208,7 @@
             android:text="@string/Required"
             android:visibility="invisible"
             android:id="@+id/Required11"
-            android:layout_alignTop="@+id/foodCost"/>
+            android:layout_alignTop="@+id/Budget"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -303,7 +303,7 @@
             android:layout_marginStart="15pt"
             android:maxWidth="70pt"
             android:minWidth="70pt"
-            android:id="@+id/foodCost"
+            android:id="@+id/Budget"
             android:inputType="numberDecimal"
             android:layout_below="@+id/food"
             android:layout_marginBottom="5pt"
@@ -319,7 +319,7 @@
             android:maxWidth="70pt"
             android:minWidth="70pt"
             android:layout_marginEnd="15pt"
-            android:id="@+id/ticketCosts"
+            android:id="@+id/SizePart"
             android:inputType="numberDecimal"
             android:layout_below="@+id/food"
             android:layout_marginBottom="5pt"
@@ -334,7 +334,7 @@
             android:text="@string/Catagories"
             android:id="@+id/textView15"
             android:layout_marginTop="5pt"
-            android:layout_below="@+id/foodCost"
+            android:layout_below="@+id/Budget"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 

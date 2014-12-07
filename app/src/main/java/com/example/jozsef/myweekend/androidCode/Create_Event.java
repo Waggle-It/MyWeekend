@@ -247,7 +247,7 @@ public class Create_Event extends Activity {
 
     //Returns Admission costs
     public double getEventTicketCosts(){
-        EditText ticketCosts = (EditText)findViewById(R.id.ticketCosts);
+        EditText ticketCosts = (EditText)findViewById(R.id.SizePart);
         try {
             return Double.parseDouble(ticketCosts.getText().toString());
         }
@@ -258,7 +258,7 @@ public class Create_Event extends Activity {
 
     //Returns Food Costs
     public double getEventFoodCosts(){
-        EditText foodCost = (EditText)findViewById(R.id.foodCost);
+        EditText foodCost = (EditText)findViewById(R.id.Budget);
         try {
             double x = Double.parseDouble(foodCost.getText().toString());
             if(x>=0 && x<=200)

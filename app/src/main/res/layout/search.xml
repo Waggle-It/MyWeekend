@@ -17,25 +17,17 @@
             android:text="@string/EventSearch"
             android:id="@+id/textView"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:visibility="gone"
-            android:layout_centerHorizontal="true"
-            android:text="@string/fillInRequired"
-            android:id="@+id/textViewRequired"/>
+
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:maxWidth="140pt"
             android:id="@+id/EventTitle"
-            android:hint="@string/EventTitle"
+            android:text="Keywords"
             android:inputType="textCapWords"
-            android:layout_below="@+id/textViewRequired"
-            android:layout_marginTop="22dp"/>
+            android:layout_below="@+id/textView"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -52,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:maxWidth="140pt"
-            android:id="@+id/Date"
+            android:id="@+id/EndDate"
             android:inputType="datetime"
             android:maxLines="1"
             android:hint="End Date(MM/DD/YY)"
@@ -61,24 +53,12 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:maxWidth="140pt"
             android:id="@+id/ZipCode"
+            android:layout_centerHorizontal="true"
             android:hint="@string/ZipCode"
             android:layout_marginBottom="5pt"
-            android:layout_below="@+id/Date"/>
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5pt"
-            android:layout_centerInParent="true"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/Costs"
-            android:id="@+id/textViewCosts"
-            android:layout_below="@+id/ZipCode"/>
+            android:layout_below="@+id/StartDate"/>
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -87,7 +67,7 @@
             android:text="@string/Hungry"
             android:id="@+id/food"
             android:checked="false"
-            android:layout_below="@+id/textViewCosts"
+            android:layout_below="@+id/ZipCode"
             android:layout_centerInParent="true"/>
 
         <EditText
@@ -96,7 +76,7 @@
             android:layout_marginStart="15pt"
             android:maxWidth="70pt"
             android:minWidth="70pt"
-            android:id="@+id/foodCost"
+            android:id="@+id/Budget"
             android:inputType="numberDecimal"
             android:layout_below="@+id/food"
             android:layout_marginBottom="5pt"
@@ -112,7 +92,7 @@
             android:maxWidth="70pt"
             android:minWidth="70pt"
             android:layout_marginEnd="15pt"
-            android:id="@+id/ticketCosts"
+            android:id="@+id/SizePart"
             android:inputType="numberDecimal"
             android:layout_below="@+id/food"
             android:layout_marginBottom="5pt"
@@ -127,7 +107,7 @@
             android:text="@string/Catagories"
             android:id="@+id/textView15"
             android:layout_marginTop="5pt"
-            android:layout_below="@+id/foodCost"
+            android:layout_below="@+id/Budget"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
