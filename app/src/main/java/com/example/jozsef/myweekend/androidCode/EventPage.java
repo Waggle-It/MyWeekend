@@ -78,7 +78,7 @@ public class EventPage extends Activity {
         title.setText(event.getTitle());
         dates.setText(monthDay.format(event.getDate()) + "\n" + year.format(event.getDate()));
         location.setText(event.getLocation());
-        image.setImageResource(event.getImage());
+        image.setImageResource(event.getcharacteristics().getImage());
         description.setText(event.getDescription());
         user.setText(event.getSubmittedBy());
         name.setText(event.getPcName());

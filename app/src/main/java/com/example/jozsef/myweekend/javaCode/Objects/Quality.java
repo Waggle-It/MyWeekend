@@ -1,5 +1,7 @@
 package com.example.jozsef.myweekend.javaCode.Objects;
 
+import com.example.jozsef.myweekend.R;
+
 /**
  * Created by Elliott on 11/3/2014.
  * A series of booleans that describe the event in question.
@@ -186,6 +188,44 @@ public class Quality {
         cause = vehicle = fashion = food = health = music = lifestyle = technology = holiday = outdoor = business = education
                 = entertainment = politics = hobbies = visual_arts = religious = sports = other =false;
     }
-
+    public int getImage(){
+        if(isHasFood())
+            return R.drawable.search;
+        if(isMusic())
+            return R.drawable.music;
+        if(isVehicle())
+            return R.drawable.car_plane;
+        if(isBusiness())
+            return R.drawable.buisness;
+        if(isVisual_arts())
+            return R.drawable.visual_arts;
+        if(isCause())
+            return R.drawable.charity;
+        if(isEducation())
+            return R.drawable.education;
+        if(isEntertainment())
+            return R.drawable.film_media;
+        if(isFood())
+            return R.drawable.culinary;
+        if(isHealth())
+            return R.drawable.health;
+        if(isHobbies())
+            return R.drawable.interest;
+        if(isHoliday())
+            return R.drawable.holiday;
+        if(isOther())
+            return R.drawable.other;
+        if(isOutdoor())
+            return R.drawable.travel;
+        if(isSports())
+            return R.drawable.sports;
+        if(isPolitics())
+            return R.drawable.politics;
+        if(isReligious())
+            return R.drawable.religion;
+        if(isLifestyle())
+            return R.drawable.home;
+        return R.drawable.ic_launcher;
+    }
 
 }

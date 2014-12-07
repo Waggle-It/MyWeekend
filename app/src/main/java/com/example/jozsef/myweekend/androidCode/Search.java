@@ -31,16 +31,9 @@ public class Search extends Activity {
         setContentView(R.layout.search);
 
         LayoutInflater x = getLayoutInflater();
-        view = x.inflate(R.layout.create_event, null);
+        view = x.inflate(R.layout.search, null);
 
-        final EditText keywords = (EditText)findViewById(R.id.title);
-        final EditText startDate = (EditText)findViewById(R.id.StartDate);
-        final EditText endDate = (EditText)findViewById(R.id.EndDate);
-        final EditText budget = (EditText)findViewById(R.id.Budget);
-        final EditText partySize = (EditText)findViewById(R.id.SizePart);
-        final CheckBox hungry = (CheckBox)findViewById(R.id.food);
-        final Quality prefer = getQuality();
-        final String[] keyWordArray = wordParse(keywords.toString());
+
 
         setContentView(view);
 
@@ -52,8 +45,18 @@ public class Search extends Activity {
             @Override
             public void onClick(View v) {
                 {
+                    final EditText keywords = (EditText)findViewById(R.id.KeyWords);
+                    final EditText startDate = (EditText)findViewById(R.id.StartDate);
+                    final EditText endDate = (EditText)findViewById(R.id.EndDate);
+                    final EditText budget = (EditText)findViewById(R.id.Budget);
+                    final EditText partySize = (EditText)findViewById(R.id.SizePart);
+                    final CheckBox hungry = (CheckBox)findViewById(R.id.food);
+                    final Quality prefer = getQuality();
+                    final String[] keyWordArray = wordParse(keywords.toString());
+
+
                     SearchTest poop = new SearchTest();
-                    eventAdapter.current = poop.search(keyWordArray, dateLong(startDate), dateLong(endDate), prefer, hungry.isChecked(), getCosts(budget), Integer.parseInt(partySize.toString()));
+                    eventAdapter.current = poop.search(keyWordArray, dateLong(startDate), dateLong(endDate), prefer, hungry.isChecked(), getCosts(budget), getPartySize(partySize));
                     startActivity(new Intent(Search.this, Event_List.class));
                 }
             }
@@ -109,13 +112,15 @@ public class Search extends Activity {
         return temp;
     }
     public String[] wordParse(String keywords){
+        keywords += " ";
         String [] temp = new String[keywords.length()];
         int i =0;
         while(keywords.contains(" ")){
             temp[i]=keywords.substring(0, keywords.indexOf(" "));
             keywords = keywords.substring(keywords.indexOf(" ")+1, keywords.length());
         }
-        for(int j=0;j<keywords.length();j++)
+
+        for(int j=0;j<keywords.length()-1;j++)
             if(temp[i]==null){
                 String[] MoreTemp = new String[j];
                 System.arraycopy(temp, 0, MoreTemp, 0, j);
@@ -148,5 +153,15 @@ public class Search extends Activity {
         catch(Exception e){}
 
         return -1.0;
+    }
+    public int getPartySize(EditText party) {
+        try {
+            return Integer.parseInt(party.getText().toString());
+        } catch (Exception e) {
+        }
+
+        Toast.makeText(this, "Please enter a valid zip code", Toast.LENGTH_LONG).show();
+
+        return -1;
     }
 }

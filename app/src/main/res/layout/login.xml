@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/smiles">
+    android:background="@drawable/theatre">
 
 
 
@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Email"
-        android:textSize="20pt"
+        android:textSize="12pt"
         android:inputType="text"
         android:layout_above="@+id/password"
         android:maxWidth="120pt"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:textSize="20pt"
+        android:textSize="12pt"
         android:maxWidth="120pt"
         android:layout_centerInParent="true"
         android:inputType="textPassword"

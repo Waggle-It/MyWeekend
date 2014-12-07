@@ -112,16 +112,18 @@ class eventAdapter extends BaseAdapter
         ImageView food = (ImageView) row.findViewById(R.id.imageView3);
         TextView tcosts = (TextView) row.findViewById(R.id.textView3);
 
+        String truncate = "" + current.get(i).getTicketCosts();
+
         if(current.get(i).getcharacteristics().isHasFood())
             food.setVisibility(View.VISIBLE);
 
         if(current.get(i).getTicketCosts()>0)
-            tcosts.setText("Addmision costs: " + current.get(i).getTicketCosts());
+            tcosts.setText("Addmision costs: " + truncate.substring(0, truncate.indexOf(".")+3));
 
         //Changes the values
         title.setText(current.get(i).getTitle());
         dates.setText(monthDay.format(current.get(i).getDate()));
-        image.setImageResource(current.get(i).getImage());
+        image.setImageResource(current.get(i).getcharacteristics().getImage());
 
         return row;
 

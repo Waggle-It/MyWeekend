@@ -340,7 +340,7 @@ public class Create_Event extends Activity {
 
     //Returns event title
     public String getEventTitle(){
-        EditText title = (EditText)findViewById(R.id.EventTitle);
+        EditText title = (EditText)findViewById(R.id.KeyWords);
         return title.getText().toString();
     }
 

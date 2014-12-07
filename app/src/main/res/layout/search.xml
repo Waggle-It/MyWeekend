@@ -24,31 +24,32 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:maxWidth="140pt"
-            android:id="@+id/EventTitle"
-            android:text="Keywords"
+            android:id="@+id/KeyWords"
+            android:hint="keywords"
             android:inputType="textCapWords"
             android:layout_below="@+id/textView"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:maxWidth="140pt"
             android:id="@+id/StartDate"
             android:inputType="datetime"
             android:maxLines="1"
             android:hint="Start Date(MM/DD/YY)"
-            android:layout_below="@+id/EventTitle"/>
+            android:layout_below="@+id/KeyWords"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:maxWidth="140pt"
             android:id="@+id/EndDate"
             android:inputType="datetime"
             android:maxLines="1"
             android:hint="End Date(MM/DD/YY)"
-            android:layout_below="@+id/EventTitle"/>
+            android:layout_below="@+id/KeyWords"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -93,7 +94,7 @@
             android:minWidth="70pt"
             android:layout_marginEnd="15pt"
             android:id="@+id/SizePart"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:layout_below="@+id/food"
             android:layout_marginBottom="5pt"
             android:layout_alignParentRight="true"

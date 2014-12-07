@@ -132,47 +132,47 @@ public class Login extends Activity {
     }
     public Quality rand(){
         Quality temp = new Quality();
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setFood(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setCause(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setSports(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setBusiness(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setTechnology(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setEducation(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setEducation(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setEntertainment(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setFashion(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setHealth(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setHobbies(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setHoliday(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setLifestyle(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setMusic(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setOther(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setOutdoor(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setPolitics(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setReligious(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setSports(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setVisual_arts(true);
-        if((int)(Math.random()*5) == 0)
+        if((int)(Math.random()*7) == 0)
             temp.setVehicle(true);
 
         return temp;
