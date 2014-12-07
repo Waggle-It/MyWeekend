@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.jozsef.myweekend.R;
 import com.example.jozsef.myweekend.javaCode.Objects.EventList;
+import com.example.jozsef.myweekend.javaCode.SearchTest;
 
 /**
  * Created by Jozsef on 12/2/2014.
@@ -26,15 +28,19 @@ public class Search extends Activity {
         LayoutInflater x = getLayoutInflater();
         view = x.inflate(R.layout.create_event, null);
 
+
+
         setContentView(view);
 
         Button create= (Button)findViewById(R.id.button);
+
 
         create.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 {
+                   // eventAdapter.current = SearchTest.search();
                     startActivity(new Intent(Search.this, Event_List.class));
                 }
             }

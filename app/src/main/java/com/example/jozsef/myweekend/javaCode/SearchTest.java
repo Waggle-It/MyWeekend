@@ -1,16 +1,20 @@
 package com.example.jozsef.myweekend.javaCode;
 
-import com.example.jozsef.myweekend.androidCode.Search;
 import com.example.jozsef.myweekend.javaCode.Objects.Event;
+import com.example.jozsef.myweekend.javaCode.Objects.EventList;
 import com.example.jozsef.myweekend.javaCode.Objects.Quality;
+import com.example.jozsef.myweekend.sortComparators.RankSort;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Jozsef on 12/6/2014.
  */
 public class SearchTest {
+    List <SearchRank> temp = new ArrayList<SearchRank>();
+
     public int titleContains(String[] keyWords, Event event){
         int count = 0;
         for(int i=0; i<keyWords.length; i++)
@@ -104,12 +108,26 @@ public class SearchTest {
 
     }
     public int eventRankedList(String[] keywords, Event event, long start, long end, Quality prefer, boolean hungry, double budget, int partySize){
-        List <SearchRank> temp = new ArrayList<SearchRank>();
-        int rank = eventRank(keywords, event, start, end, prefer, hungry, budget, partySize);
-        SearchRank tem = new SearchRank(event, rank);
-        temp.add(tem);
 
-        return 0;
+        int rank = eventRank(keywords, event, start, end, prefer, hungry, budget, partySize);
+
+
+        return rank;
+    }
+    public List<Event> search(String[] keywords, long start, long end, Quality prefer, boolean hungry, double budget, int partySize){
+        int rank;
+        SearchRank tem = null;
+        List <SearchRank> search = new ArrayList<SearchRank>();
+        for(int i=0; i<EventList.getEventList().size(); i++){
+            rank = eventRankedList(keywords, EventList.getEventList().get(i), start, end, prefer, hungry, budget, partySize);
+            tem = new SearchRank(EventList.getEventList().get(i), rank);
+            search.add(tem);
+        }
+        Collections.sort(search, new RankSort());
+        List<Event> NeW = new ArrayList<Event>();
+        for(int i =0; i<search.size(); i++)
+            NeW.add(search.get(i).getEvent());
+        return NeW;
     }
     public class SearchRank{
         private Event event;

@@ -40,12 +40,22 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:maxWidth="140pt"
+            android:id="@+id/StartDate"
+            android:inputType="datetime"
+            android:maxLines="1"
+            android:hint="Start Date(MM/DD/YY)"
+            android:layout_below="@+id/EventTitle"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:maxWidth="140pt"
             android:id="@+id/Date"
             android:inputType="datetime"
             android:maxLines="1"
-            android:hint="@string/EventDate"
+            android:hint="End Date(MM/DD/YY)"
             android:layout_below="@+id/EventTitle"/>
 
         <EditText
