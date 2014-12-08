@@ -276,7 +276,7 @@ public class Create_Event extends Activity {
             return "";
         return email.getText().toString().trim();
     }
-
+        //had to change somthing
     //Returns point of contact name
     public String getEventPCName() {
         EditText name = (EditText)findViewById(R.id.pcName);
