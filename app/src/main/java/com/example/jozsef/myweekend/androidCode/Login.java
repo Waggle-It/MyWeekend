@@ -107,6 +107,7 @@ public class Login extends Activity {
 
     private void fakeData() {
         Event myBday = new Event( "My Birthday", "6 Hartwell Ct. Savoy, IL 61938", 1418544000000L, "des", rand(), 0, 0, R.drawable.download, "jozsef.morrissey", "Jozsef Morrissey", "jozsef.morrissey@gmail.com", "https://www.facebook.com/jozsef.morrissey", "2172548654");
+        myBday.getcharacteristics().setHasFood(true);
         EventList.getEventList().add(myBday);
 
         String[] titles = {"Stats Tutoring Group", "Ice Cream Social", "Apple Picking", "Trip to San Fransisco", "HackMIT", "Pumpkin Patch", "Octoverlovers Hayride", "Barn dance", "IronChef", "Apple Pressing & Cider Making", "Farmer's Market", "Peach Cobbler", "BoilerMake", "Seattle Trip", "PMT run", "Opening for new Ramen shop", "AWESOME HALLOWEEN PARTY", "Juice Bar opens", "WildHacks", "Angela's Birthday Party" };

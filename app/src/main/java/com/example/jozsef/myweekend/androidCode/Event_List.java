@@ -111,6 +111,7 @@ class eventAdapter extends BaseAdapter
         ImageView image = (ImageView) row.findViewById(R.id.imageView2);
         ImageView food = (ImageView) row.findViewById(R.id.imageView3);
         TextView tcosts = (TextView) row.findViewById(R.id.textView3);
+        food.setImageResource(R.drawable.has_food);
 
         String truncate = "" + current.get(i).getTicketCosts();
 

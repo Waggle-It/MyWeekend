@@ -189,8 +189,6 @@ public class Quality {
                 = entertainment = politics = hobbies = visual_arts = religious = sports = other =false;
     }
     public int getImage(){
-        if(isHasFood())
-            return R.drawable.search;
         if(isMusic())
             return R.drawable.music;
         if(isVehicle())
