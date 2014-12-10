@@ -79,11 +79,12 @@ class sortAdapter extends BaseAdapter
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        int[] images = {R.drawable.search, R.drawable.today, R.drawable.your_weekend, R.drawable.step_out_of_your_box, R.drawable.recommended, R.drawable.popular, R.drawable.all_events, R.drawable.car_plane, R.drawable.buisness, R.drawable.charity, R.drawable.education, R.drawable.fashion, R.drawable.film_media, R.drawable.has_food, R.drawable.culinary, R.drawable.politics, R.drawable.health, R.drawable.interest, R.drawable.home, R.drawable.music, R.drawable.other, R.drawable.visual_arts, R.drawable.religion, R.drawable.technology, R.drawable.holiday, R.drawable.sports, R.drawable.money, R.drawable.travel};
+        int[] images = {R.drawable.search, R.drawable.today, R.drawable.your_weekend, R.drawable.step_out_of_your_box, R.drawable.recommended, R.drawable.popular, R.drawable.all_events, R.drawable.car_plane, R.drawable.buisness, R.drawable.charity, R.drawable.education, R.drawable.fashion, R.drawable.film_media, R.drawable.has_food_big, R.drawable.culinary, R.drawable.politics, R.drawable.health, R.drawable.interest, R.drawable.home, R.drawable.music, R.drawable.other, R.drawable.visual_arts, R.drawable.religion, R.drawable.technology, R.drawable.holiday, R.drawable.sports, R.drawable.money, R.drawable.travel};
 
         //inflater allows for easy access to modify existing values of xml files. Alowing us to match the layout of single_row.
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View block=inflater.inflate(R.layout.single_block, viewGroup, false);
+
 
         //Links the values within xml
         TextView area = (TextView) block.findViewById(R.id.textView);
